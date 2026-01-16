@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lừa đảo trên Internet</title>
+
+<style>
+:root{
+    --main:#1d4ed8;
+    --second:#dc2626;
+    --bg:#f1f5f9;
+    --text:#1f2937;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* HEADER */
+header{
+    background:#ffffff;
+    border-bottom:4px solid var(--second);
+    padding:30px 6%;
+}
+header h1{
+    color:var(--second);
+    font-size:28px;
+}
+header p{
+    margin-top:6px;
+    color:#475569;
+}
+
+/* NAV */
+.nav{
+    background:var(--main);
+    padding:12px 6%;
+}
+.nav a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* MAIN */
+main{
+    padding:40px 6%;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:40px;
+}
+
+/* BOX */
+.box{
+    background:#ffffff;
+    padding:25px;
+    border-radius:6px;
+    margin-bottom:30px;
+}
+
+/* ARTICLE */
+.article h2{
+    font-size:24px;
+    margin-bottom:15px;
+}
+.article p{
+    line-height:1.8;
+    color:#374151;
+}
+
+/* CARD */
+.card{
+    border-left:4px solid var(--second);
+    padding-left:15px;
+    margin-bottom:20px;
+}
+.card h3{
+    color:#991b1b;
+    margin-bottom:6px;
+}
+.card p{
+    color:#374151;
+    font-size:15px;
+}
+
+/* SIDEBAR */
+.sidebar h3{
+    border-left:4px solid var(--main);
+    padding-left:10px;
+    margin-bottom:15px;
+}
+.sidebar p{
+    font-size:14px;
+    color:#475569;
+    line-height:1.6;
+}
+
+/* FOOTER */
+footer{
+    background:#0f172a;
+    color:#cbd5f5;
+    text-align:center;
+    padding:25px;
+    font-size:14px;
+    margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    main{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>LỪA ĐẢO TRÊN INTERNET</h1>
+    <p>Nhận diện – Phòng tránh – Xử lý các hành vi lừa đảo trực tuyến</p>
+</header>
+
+<div class="nav">
+    <a href="index.html">⬅ Quay lại Trang chủ</a>
+</div>
+
+<main>
+
+    <!-- NỘI DUNG CHÍNH -->
+    <div>
+
+        <div class="box article">
+            <h2>Thực trạng lừa đảo trực tuyến</h2>
+            <p>
+                Lừa đảo trên Internet ngày càng gia tăng với nhiều hình thức tinh vi,
+                lợi dụng sự thiếu hiểu biết và tâm lý chủ quan của người dùng.
+                Học sinh và người cao tuổi là những đối tượng dễ bị nhắm tới.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Các hình thức lừa đảo phổ biến</h2>
+
+            <div class="card">
+                <h3>Giả danh ngân hàng</h3>
+                <p>
+                    Kẻ gian giả làm nhân viên ngân hàng, yêu cầu cung cấp mã OTP,
+                    mật khẩu hoặc đường link xác minh tài khoản.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Trúng thưởng ảo</h3>
+                <p>
+                    Thông báo trúng thưởng giá trị lớn nhưng yêu cầu
+                    chuyển tiền hoặc đóng phí trước để nhận thưởng.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Website và link giả mạo</h3>
+                <p>
+                    Tạo trang web giống Facebook, Zalo, ngân hàng để đánh cắp
+                    tài khoản và thông tin cá nhân.
+                </p>
+            </div>
+        </div>
+
+        <div class="box">
+            <h2>Cách phòng tránh</h2>
+            <p>
+                • Không cung cấp OTP, mật khẩu cho bất kỳ ai.<br>
+                • Kiểm tra kỹ đường link và địa chỉ website.<br>
+                • Không chuyển tiền cho người lạ qua mạng.<br>
+                • Báo ngay cho người thân hoặc cơ quan chức năng khi nghi ngờ bị lừa.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="box">
+            <h3>Khuyến cáo</h3>
+            <p>
+                Cơ quan chức năng khuyến cáo người dân nâng cao cảnh giác,
+                thường xuyên cập nhật kiến thức an toàn Internet để
+                tự bảo vệ bản thân và gia đình.
+            </p>
+        </div>
+
+        <div class="box">
+            <h3>Chuyên mục liên quan</h3>
+            <p>
+                • <a href="bat-nat-mang.html">Bắt nạt mạng</a><br>
+                • <a href="bao-mat.html">Bảo mật thông tin</a><br>
+                • <a href="tu-bao-ve.html">Kỹ năng tự bảo vệ</a>
+            </p>
+        </div>
+
+    </aside>
+
+</main>
+
+<footer>
+    © 2026 – Cổng thông tin Internet An Toàn | Dự án học tập
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bảo mật thông tin cá nhân</title>
+
+<style>
+:root{
+    --main:#1d4ed8;
+    --second:#0f766e;
+    --bg:#f1f5f9;
+    --text:#1f2937;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* HEADER */
+header{
+    background:#ffffff;
+    border-bottom:4px solid var(--second);
+    padding:30px 6%;
+}
+header h1{
+    color:var(--second);
+    font-size:28px;
+}
+header p{
+    margin-top:6px;
+    color:#475569;
+}
+
+/* NAV */
+.nav{
+    background:var(--main);
+    padding:12px 6%;
+}
+.nav a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* MAIN */
+main{
+    padding:40px 6%;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:40px;
+}
+
+/* BOX */
+.box{
+    background:#ffffff;
+    padding:25px;
+    border-radius:6px;
+    margin-bottom:30px;
+}
+
+/* ARTICLE */
+.article h2{
+    font-size:24px;
+    margin-bottom:15px;
+}
+.article p{
+    line-height:1.8;
+    color:#374151;
+}
+
+/* CARD */
+.card{
+    border-left:4px solid var(--second);
+    padding-left:15px;
+    margin-bottom:20px;
+}
+.card h3{
+    color:#115e59;
+    margin-bottom:6px;
+}
+.card p{
+    color:#374151;
+    font-size:15px;
+}
+
+/* SIDEBAR */
+.sidebar h3{
+    border-left:4px solid var(--main);
+    padding-left:10px;
+    margin-bottom:15px;
+}
+.sidebar p{
+    font-size:14px;
+    color:#475569;
+    line-height:1.6;
+}
+
+/* FOOTER */
+footer{
+    background:#0f172a;
+    color:#cbd5f5;
+    text-align:center;
+    padding:25px;
+    font-size:14px;
+    margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    main{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>BẢO MẬT THÔNG TIN CÁ NHÂN</h1>
+    <p>Giữ an toàn dữ liệu – Bảo vệ quyền riêng tư trên Internet</p>
+</header>
+
+<div class="nav">
+    <a href="index.html">⬅ Quay lại Trang chủ</a>
+</div>
+
+<main>
+
+    <!-- NỘI DUNG CHÍNH -->
+    <div>
+
+        <div class="box article">
+            <h2>Tầm quan trọng của bảo mật thông tin</h2>
+            <p>
+                Thông tin cá nhân như số điện thoại, căn cước công dân,
+                tài khoản ngân hàng hay mật khẩu mạng xã hội
+                nếu bị lộ có thể gây hậu quả nghiêm trọng.
+                Việc bảo mật thông tin là trách nhiệm của mỗi người khi sử dụng Internet.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Những rủi ro thường gặp</h2>
+
+            <div class="card">
+                <h3>Mật khẩu yếu</h3>
+                <p>
+                    Sử dụng mật khẩu dễ đoán như ngày sinh,
+                    số điện thoại khiến tài khoản dễ bị chiếm quyền.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Chia sẻ OTP</h3>
+                <p>
+                    Cung cấp mã OTP cho người khác dẫn đến
+                    mất tài khoản ngân hàng hoặc ví điện tử.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Cài ứng dụng không rõ nguồn gốc</h3>
+                <p>
+                    Ứng dụng độc hại có thể đánh cắp dữ liệu
+                    và theo dõi hoạt động người dùng.
+                </p>
+            </div>
+        </div>
+
+        <div class="box">
+            <h2>Biện pháp bảo mật hiệu quả</h2>
+            <p>
+                • Sử dụng mật khẩu mạnh và khác nhau cho từng tài khoản.<br>
+                • Bật xác thực hai lớp (2FA).<br>
+                • Không chia sẻ thông tin cá nhân trên mạng xã hội.<br>
+                • Thường xuyên cập nhật phần mềm và hệ điều hành.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="box">
+            <h3>Khuyến nghị</h3>
+            <p>
+                Người dùng nên nâng cao nhận thức về an toàn thông tin,
+                chủ động bảo vệ dữ liệu cá nhân để tránh các rủi ro không đáng có.
+            </p>
+        </div>
+
+        <div class="box">
+            <h3>Chuyên mục liên quan</h3>
+            <p>
+                • <a href="lua-dao.html">Lừa đảo Internet</a><br>
+                • <a href="bat-nat-mang.html">Bắt nạt mạng</a><br>
+                • <a href="tu-bao-ve.html">Kỹ năng tự bảo vệ</a>
+            </p>
+        </div>
+
+    </aside>
+
+</main>
+
+<footer>
+    © 2026 – Cổng thông tin Internet An Toàn | Dự án học tập
+</footer>
+
+</body>
+</html>

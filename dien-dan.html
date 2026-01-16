@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diễn đàn – Internet An Toàn</title>
+
+<style>
+:root{
+    --main:#1d4ed8;
+    --second:#16a34a;
+    --bg:#f1f5f9;
+    --text:#1f2937;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* HEADER */
+header{
+    background:#ffffff;
+    border-bottom:4px solid var(--main);
+    padding:25px 6%;
+}
+header h1{
+    color:var(--main);
+    font-size:28px;
+}
+header p{
+    color:#475569;
+    margin-top:6px;
+}
+
+/* NAV TOP */
+.top-nav{
+    background:var(--main);
+    padding:12px 6%;
+}
+.top-nav a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* MAIN */
+main{
+    padding:40px 6%;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:40px;
+}
+
+/* BOX */
+.box{
+    background:#ffffff;
+    padding:25px;
+    border-radius:6px;
+    margin-bottom:30px;
+}
+
+/* DIỄN ĐÀN */
+.box h2{
+    border-left:4px solid var(--second);
+    padding-left:10px;
+    margin-bottom:20px;
+    color:#065f46;
+}
+
+.forum-item{
+    padding:15px 0;
+    border-bottom:1px solid #e5e7eb;
+}
+.forum-item:last-child{
+    border-bottom:none;
+}
+.forum-item strong{
+    color:#1e40af;
+}
+.forum-item p{
+    font-size:14px;
+    color:#475569;
+    margin-top:5px;
+}
+
+/* FORM */
+form{
+    display:grid;
+    gap:15px;
+}
+input, textarea{
+    width:100%;
+    padding:12px 14px;
+    border-radius:4px;
+    border:1px solid #cbd5f5;
+    font-size:15px;
+}
+textarea{
+    resize:none;
+    height:120px;
+}
+button{
+    background:var(--main);
+    color:#fff;
+    border:none;
+    padding:12px;
+    border-radius:4px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+}
+button:hover{
+    background:#1e40af;
+}
+
+/* SIDEBAR */
+.sidebar h3{
+    border-left:4px solid var(--main);
+    padding-left:10px;
+    margin-bottom:15px;
+}
+.note{
+    font-size:14px;
+    color:#475569;
+    line-height:1.6;
+}
+
+/* FOOTER */
+footer{
+    background:#0f172a;
+    color:#cbd5f5;
+    text-align:center;
+    padding:25px;
+    font-size:14px;
+    margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    main{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>DIỄN ĐÀN INTERNET AN TOÀN</h1>
+    <p>Tiếp nhận câu hỏi, phản ánh và chia sẻ kinh nghiệm sử dụng Internet an toàn</p>
+</header>
+
+<div class="top-nav">
+    <a href="index.html">⬅ Quay lại Trang chủ</a>
+</div>
+
+<main>
+
+    <!-- CỘT TRÁI -->
+    <div>
+
+        <div class="box">
+            <h2>Chủ đề thảo luận nổi bật</h2>
+
+            <div class="forum-item">
+                <strong>Cách nhận biết website lừa đảo</strong>
+                <p>Dấu hiệu nhận biết trang web giả mạo, kém an toàn.</p>
+            </div>
+
+            <div class="forum-item">
+                <strong>Bị lừa tiền online phải làm gì?</strong>
+                <p>Các bước cần làm để hạn chế thiệt hại và báo cáo.</p>
+            </div>
+
+            <div class="forum-item">
+                <strong>Cách đặt mật khẩu an toàn</strong>
+                <p>Hướng dẫn tạo mật khẩu mạnh và bảo mật tài khoản.</p>
+            </div>
+
+            <div class="forum-item">
+                <strong>Sử dụng mạng xã hội an toàn</strong>
+                <p>Chia sẻ kinh nghiệm tránh rủi ro trên Facebook, Zalo.</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <h2>Gửi câu hỏi / chia sẻ</h2>
+
+            <form action="mailto:nguyentructructv0901@gmail.com" method="post" enctype="text/plain">
+                <input type="text" name="Họ tên" placeholder="Họ và tên" required>
+                <input type="email" name="Email" placeholder="Email liên hệ" required>
+                <textarea name="Nội dung" placeholder="Nhập nội dung câu hỏi hoặc chia sẻ..." required></textarea>
+                <button type="submit">📩 Gửi thông tin</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="box">
+            <h3>Lưu ý</h3>
+            <p class="note">
+                Thông tin gửi về diễn đàn sẽ được tiếp nhận để phục vụ
+                mục đích học tập và tuyên truyền kiến thức an toàn Internet.
+                Không chia sẻ thông tin cá nhân nhạy cảm.
+            </p>
+        </div>
+
+        <div class="box">
+            <h3>Liên kết nhanh</h3>
+            <p class="note">
+                • <a href="lua-dao.html">Phòng chống lừa đảo</a><br>
+                • <a href="bao-mat.html">Hướng dẫn bảo mật</a><br>
+                • <a href="tu-bao-ve.html">Kỹ năng tự bảo vệ</a>
+            </p>
+        </div>
+
+    </aside>
+
+</main>
+
+<footer>
+    © 2026 – Diễn đàn Internet An Toàn | Dự án học tập
+</footer>
+
+</body>
+</html>

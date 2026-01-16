@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bắt nạt trên Internet</title>
+
+<style>
+:root{
+    --main:#1d4ed8;
+    --second:#dc2626;
+    --bg:#f1f5f9;
+    --text:#1f2937;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* HEADER */
+header{
+    background:#ffffff;
+    border-bottom:4px solid var(--second);
+    padding:30px 6%;
+}
+header h1{
+    color:var(--second);
+    font-size:28px;
+}
+header p{
+    margin-top:6px;
+    color:#475569;
+}
+
+/* NAV */
+.nav{
+    background:var(--main);
+    padding:12px 6%;
+}
+.nav a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* MAIN */
+main{
+    padding:40px 6%;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:40px;
+}
+
+/* BOX */
+.box{
+    background:#ffffff;
+    padding:25px;
+    border-radius:6px;
+    margin-bottom:30px;
+}
+
+/* ARTICLE */
+.article h2{
+    font-size:24px;
+    margin-bottom:15px;
+}
+.article p{
+    line-height:1.8;
+    color:#374151;
+}
+
+/* CARD */
+.card{
+    border-left:4px solid var(--second);
+    padding-left:15px;
+    margin-bottom:20px;
+}
+.card h3{
+    color:#991b1b;
+    margin-bottom:6px;
+}
+.card p{
+    color:#374151;
+    font-size:15px;
+}
+
+/* SIDEBAR */
+.sidebar h3{
+    border-left:4px solid var(--main);
+    padding-left:10px;
+    margin-bottom:15px;
+}
+.sidebar p{
+    font-size:14px;
+    color:#475569;
+    line-height:1.6;
+}
+
+/* FOOTER */
+footer{
+    background:#0f172a;
+    color:#cbd5f5;
+    text-align:center;
+    padding:25px;
+    font-size:14px;
+    margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    main{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>BẮT NẠT TRÊN INTERNET</h1>
+    <p>Hiểm họa tinh thần và tác động lâu dài trong môi trường số</p>
+</header>
+
+<div class="nav">
+    <a href="index.html">⬅ Quay lại Trang chủ</a>
+</div>
+
+<main>
+
+    <!-- NỘI DUNG CHÍNH -->
+    <div>
+
+        <div class="box article">
+            <h2>Thực trạng bắt nạt trên mạng</h2>
+            <p>
+                Bắt nạt trên Internet (Cyberbullying) là hành vi xúc phạm,
+                đe dọa, lan truyền thông tin xấu nhằm gây tổn thương tinh thần
+                cho người khác. Học sinh – sinh viên là nhóm dễ bị ảnh hưởng nhất.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Các hình thức phổ biến</h2>
+
+            <div class="card">
+                <h3>Chửi bới, xúc phạm</h3>
+                <p>
+                    Bình luận ác ý, miệt thị ngoại hình, giới tính,
+                    hoàn cảnh cá nhân trên mạng xã hội.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Lan truyền tin giả</h3>
+                <p>
+                    Bịa đặt, cắt ghép hình ảnh hoặc thông tin sai sự thật
+                    làm ảnh hưởng danh dự người khác.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Đe dọa tinh thần</h3>
+                <p>
+                    Gửi tin nhắn đe dọa, khủng bố tinh thần khiến nạn nhân
+                    lo sợ, stress và trầm cảm.
+                </p>
+            </div>
+        </div>
+
+        <div class="box">
+            <h2>Cách phòng tránh và xử lý</h2>
+            <p>
+                • Không đáp trả các bình luận tiêu cực.<br>
+                • Lưu lại bằng chứng (ảnh chụp, tin nhắn).<br>
+                • Chặn và báo cáo tài khoản xấu.<br>
+                • Chia sẻ với người thân, thầy cô hoặc cơ quan chức năng.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="box">
+            <h3>Lưu ý</h3>
+            <p>
+                Bắt nạt trên mạng có thể để lại hậu quả tâm lý nghiêm trọng.
+                Mỗi người cần sử dụng Internet có trách nhiệm và tôn trọng người khác.
+            </p>
+        </div>
+
+        <div class="box">
+            <h3>Chuyên mục liên quan</h3>
+            <p>
+                • <a href="lua-dao.html">Lừa đảo Internet</a><br>
+                • <a href="bao-mat.html">Bảo mật thông tin</a><br>
+                • <a href="tu-bao-ve.html">Kỹ năng tự bảo vệ</a>
+            </p>
+        </div>
+
+    </aside>
+
+</main>
+
+<footer>
+    © 2026 – Cổng thông tin Internet An Toàn | Dự án học tập
+</footer>
+
+</body>
+</html>

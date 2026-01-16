@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cổng thông tin Internet An Toàn</title>
+
+<style>
+:root{
+    --main:#1d4ed8;
+    --second:#16a34a;
+    --dark:#0f172a;
+    --text:#1f2937;
+    --bg:#f1f5f9;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* HEADER */
+header{
+    background:#ffffff;
+    border-bottom:4px solid var(--main);
+    padding:20px 6%;
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+/* LOGO */
+.logo{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid var(--main);
+    background:#fff;
+
+    /* FIX LOGO XOAY NGANG */
+    transform: rotate(-90deg);
+}
+
+/* TITLE */
+.header-text h1{
+    color:var(--main);
+    font-size:28px;
+}
+.header-text p{
+    color:#475569;
+    margin-top:4px;
+    font-size:15px;
+}
+
+/* NAV */
+nav{
+    background:var(--main);
+    padding:12px 6%;
+}
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin-right:25px;
+    font-weight:600;
+}
+nav a:hover{
+    text-decoration:underline;
+}
+
+/* MAIN */
+.container{
+    padding:40px 6%;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:40px;
+}
+
+/* BÀI VIẾT CHÍNH */
+.main-article{
+    background:#fff;
+    padding:30px;
+    border-radius:6px;
+}
+.main-article h2{
+    font-size:26px;
+    color:#0f172a;
+    margin-bottom:15px;
+}
+.main-article p{
+    line-height:1.8;
+    color:#374151;
+}
+.main-article img{
+    width:100%;
+    margin:20px 0;
+    border-radius:4px;
+}
+
+/* SIDEBAR */
+.sidebar{
+    background:#fff;
+    padding:25px;
+    border-radius:6px;
+}
+.sidebar h3{
+    border-left:4px solid var(--second);
+    padding-left:10px;
+    margin-bottom:20px;
+    color:#065f46;
+}
+.news-item{
+    margin-bottom:18px;
+}
+.news-item a{
+    text-decoration:none;
+    color:#1e40af;
+    font-weight:600;
+}
+.news-item a:hover{
+    text-decoration:underline;
+}
+.news-item p{
+    font-size:14px;
+    color:#475569;
+}
+
+/* CHUYÊN MỤC */
+.section{
+    padding:40px 6%;
+}
+.section h2{
+    margin-bottom:25px;
+    color:#0f172a;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#fff;
+    padding:20px;
+    border-radius:6px;
+    border-top:4px solid var(--main);
+}
+.card h3{
+    margin-bottom:10px;
+    color:#1e3a8a;
+}
+.card p{
+    font-size:15px;
+    color:#374151;
+}
+.card a{
+    display:inline-block;
+    margin-top:10px;
+    font-size:14px;
+    color:var(--second);
+    font-weight:600;
+    text-decoration:none;
+}
+.card a:hover{
+    text-decoration:underline;
+}
+
+/* FOOTER */
+footer{
+    background:#0f172a;
+    color:#cbd5f5;
+    text-align:center;
+    padding:25px;
+    font-size:14px;
+    margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    header{
+        flex-direction:column;
+        text-align:center;
+    }
+    .container{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="logo.png" alt="Logo THPT NTT" class="logo">
+
+    <div class="header-text">
+        <h1>CỔNG THÔNG TIN INTERNET AN TOÀN</h1>
+        <p>Trang thông tin tuyên truyền, phổ biến kiến thức an toàn không gian mạng</p>
+    </div>
+</header>
+
+<nav>
+    <a href="index.html">Trang chủ</a>
+    <a href="lua-dao.html">Lừa đảo</a>
+    <a href="bat-nat-mang.html">Bắt nạt mạng</a>
+    <a href="bao-mat.html">Bảo mật</a>
+    <a href="tu-bao-ve.html">Tự bảo vệ</a>
+    <a href="dien-dan.html">Diễn đàn</a>
+</nav>
+
+<div class="container">
+
+    <div class="main-article">
+        <h2>Nâng cao nhận thức về an toàn Internet cho học sinh</h2>
+        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
+        <p>
+            Internet mang lại nhiều lợi ích trong học tập và đời sống, tuy nhiên
+            cũng tiềm ẩn nhiều nguy cơ như lừa đảo trực tuyến, rò rỉ thông tin cá nhân,
+            bắt nạt trên mạng xã hội. Việc trang bị kiến thức an toàn Internet là
+            vô cùng cần thiết đối với mỗi người, đặc biệt là học sinh.
+        </p>
+    </div>
+
+    <aside class="sidebar">
+        <h3>Tin nổi bật</h3>
+
+        <div class="news-item">
+            <a href="lua-dao.html">Cảnh báo các hình thức lừa đảo online phổ biến</a>
+            <p>Các chiêu trò giả danh ngân hàng, trúng thưởng ngày càng tinh vi.</p>
+        </div>
+
+        <div class="news-item">
+            <a href="bat-nat-mang.html">Bắt nạt mạng và hậu quả tâm lý</a>
+            <p>Hành vi tưởng chừng vô hại nhưng gây ảnh hưởng nghiêm trọng.</p>
+        </div>
+
+        <div class="news-item">
+            <a href="bao-mat.html">Hướng dẫn bảo mật tài khoản cá nhân</a>
+            <p>Những nguyên tắc cơ bản để giữ an toàn thông tin.</p>
+        </div>
+    </aside>
+
+</div>
+
+<section class="section">
+    <h2>Chuyên mục</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Lừa đảo trực tuyến</h3>
+            <p>Nhận diện và phòng tránh các hình thức lừa đảo trên Internet.</p>
+            <a href="lua-dao.html">Xem chi tiết →</a>
+        </div>
+
+        <div class="card">
+            <h3>Bắt nạt mạng</h3>
+            <p>Tác hại, dấu hiệu và cách ứng phó khi bị bắt nạt trên mạng.</p>
+            <a href="bat-nat-mang.html">Xem chi tiết →</a>
+        </div>
+
+        <div class="card">
+            <h3>Bảo mật</h3>
+            <p>Cách bảo vệ mật khẩu, dữ liệu cá nhân và tài khoản.</p>
+            <a href="bao-mat.html">Xem chi tiết →</a>
+        </div>
+
+        <div class="card">
+            <h3>Tự bảo vệ</h3>
+            <p>Kỹ năng sử dụng Internet an toàn và văn minh.</p>
+            <a href="tu-bao-ve.html">Xem chi tiết →</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 – Cổng thông tin Internet An Toàn | Dự án học tập
+</footer>
+
+</body>
+</html>
