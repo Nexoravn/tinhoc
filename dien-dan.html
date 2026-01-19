@@ -6,145 +6,214 @@
 <title>Diễn đàn – Internet An Toàn</title>
 
 <style>
+/* ===== BIẾN MÀU GIỐNG INDEX ===== */
 :root{
-    --main:#1d4ed8;
-    --second:#16a34a;
-    --bg:#f1f5f9;
-    --text:#1f2937;
+    --main:#7c7cff;
+    --second:#00e5ff;
+    --accent:#ff4fd8;
+    --dark:#050816;
+    --text:#e5e7eb;
+    --muted:#a5b4fc;
+    --glass:rgba(255,255,255,.08);
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
     font-family:"Segoe UI",Arial,sans-serif;
-    background:var(--bg);
+    background:radial-gradient(circle at top, #1b1f4a, #050816 70%);
     color:var(--text);
+    overflow-x:hidden;
 }
 
-/* HEADER */
+/* SAO BAY */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(1px 1px at 20% 30%, #fff, transparent),
+        radial-gradient(1px 1px at 70% 40%, #fff, transparent),
+        radial-gradient(2px 2px at 50% 80%, #fff, transparent),
+        radial-gradient(1px 1px at 90% 20%, #fff, transparent);
+    animation:stars 70s linear infinite;
+    opacity:.5;
+    z-index:-1;
+}
+@keyframes stars{
+    from{transform:translateY(0);}
+    to{transform:translateY(-2000px);}
+}
+
+/* ===== HEADER ===== */
 header{
-    background:#ffffff;
-    border-bottom:4px solid var(--second);
-    padding:30px 6%;
+    background:rgba(10,15,40,.75);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,.15);
+    padding:22px 6%;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    box-shadow:0 0 30px rgba(124,124,255,.4);
 }
-header h1{
-    color:var(--main);
-    font-size:28px;
+
+.logo-wrap{
+    position:relative;
+    width:70px;
+    height:70px;
 }
-header p{
+.logo-wrap::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    background:conic-gradient(#00e5ff,#7c7cff,#ff4fd8,#00e5ff);
+    filter:blur(6px);
+    animation:spin 6s linear infinite;
+}
+.logo{
+    position:relative;
+    width:56px;
+    height:56px;
+    margin:7px;
+    border-radius:50%;
+    background:#fff;
+    z-index:1;
+}
+
+@keyframes spin{to{transform:rotate(360deg);}}
+
+.header-text h1{
+    font-size:26px;
+    background:linear-gradient(90deg,#fff,var(--second),var(--accent));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+.header-text p{
+    color:var(--muted);
     margin-top:6px;
-    color:#475569;
 }
 
-/* NAV */
-.nav{
-    background:var(--main);
-    padding:12px 6%;
+/* ===== NAV ===== */
+nav{
+    background:rgba(5,8,30,.9);
+    backdrop-filter:blur(12px);
+    padding:14px 6%;
 }
-.nav a{
-    color:#fff;
+nav a{
+    color:#dbeafe;
     text-decoration:none;
+    margin-right:28px;
     font-weight:600;
+    position:relative;
 }
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;bottom:-4px;
+    width:0;height:2px;
+    background:linear-gradient(90deg,var(--second),var(--accent));
+    transition:.4s;
+}
+nav a:hover::after{width:100%;}
 
-/* MAIN */
+/* ===== MAIN ===== */
 main{
-    padding:40px 6%;
+    padding:45px 6%;
     display:grid;
     grid-template-columns:2fr 1fr;
     gap:40px;
 }
 
-/* BOX */
+/* ===== BOX GLASS ===== */
 .box{
-    background:#ffffff;
-    padding:25px;
-    border-radius:6px;
+    background:var(--glass);
+    backdrop-filter:blur(14px);
+    padding:28px;
+    border-radius:14px;
     margin-bottom:30px;
+    animation:fadeUp .8s ease;
 }
 
-/* TIÊU ĐỀ BOX */
-.box h2{
+.box h2, .box h3{
     border-left:4px solid var(--second);
-    padding-left:10px;
-    margin-bottom:20px;
-    color:#065f46;
+    padding-left:12px;
+    margin-bottom:18px;
+    color:#7dd3fc;
 }
 
 /* FORUM ITEM */
 .forum-item{
-    padding:15px 0;
-    border-bottom:1px solid #e5e7eb;
+    padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,.12);
 }
-.forum-item:last-child{
-    border-bottom:none;
-}
+.forum-item:last-child{border-bottom:none;}
 .forum-item strong{
-    color:#1e40af;
+    color:#e0e7ff;
 }
 .forum-item p{
     font-size:14px;
-    color:#475569;
-    margin-top:5px;
+    color:#c7d2fe;
+    margin-top:6px;
 }
 
 /* FORM */
 form{
     display:grid;
-    gap:15px;
+    gap:14px;
 }
 input, textarea{
-    width:100%;
-    padding:12px 14px;
-    border-radius:4px;
-    border:1px solid #cbd5f5;
-    font-size:15px;
-}
-textarea{
-    resize:none;
-    height:120px;
-}
-button{
-    background:var(--main);
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
     color:#fff;
-    border:none;
-    padding:12px;
-    border-radius:4px;
+    padding:12px 14px;
+    border-radius:6px;
     font-size:15px;
-    font-weight:600;
+}
+textarea{height:120px;resize:none;}
+
+button{
+    background:linear-gradient(90deg,var(--second),var(--accent));
+    border:none;
+    color:#000;
+    padding:12px;
+    border-radius:6px;
+    font-weight:700;
     cursor:pointer;
 }
 button:hover{
-    background:#1e40af;
+    box-shadow:0 0 20px rgba(0,229,255,.6);
 }
 
 /* SIDEBAR */
-.sidebar h3{
-    border-left:4px solid var(--main);
-    padding-left:10px;
-    margin-bottom:15px;
-}
 .sidebar p{
     font-size:14px;
-    color:#475569;
+    color:#c7d2fe;
     line-height:1.6;
+}
+.sidebar a{
+    color:var(--second);
+    text-decoration:none;
 }
 
 /* FOOTER */
 footer{
-    background:#0f172a;
-    color:#cbd5f5;
+    background:#050816;
+    color:#c7d2fe;
     text-align:center;
-    padding:25px;
-    font-size:14px;
-    margin-top:40px;
+    padding:28px;
+    margin-top:50px;
 }
 
-/* RESPONSIVE */
+/* ANIM */
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(25px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
 @media(max-width:900px){
-    main{
-        grid-template-columns:1fr;
-    }
+    header{flex-direction:column;text-align:center;}
+    main{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -152,40 +221,43 @@ footer{
 <body>
 
 <header>
-    <h1>DIỄN ĐÀN INTERNET AN TOÀN</h1>
-    <p>Tiếp nhận câu hỏi, phản ánh và chia sẻ kinh nghiệm sử dụng Internet an toàn</p>
+    <div class="logo-wrap">
+        <img src="logo.png" class="logo">
+    </div>
+    <div class="header-text">
+        <h1>DIỄN ĐÀN INTERNET AN TOÀN</h1>
+        <p>Chia sẻ – Hỏi đáp – Kinh nghiệm sử dụng Internet an toàn</p>
+    </div>
 </header>
 
-<div class="nav">
-    <a href="index.html">⬅ Quay lại Trang chủ</a>
-</div>
+<nav>
+    <a href="index.html">Trang chủ</a>
+    <a href="lua-dao.html">Lừa đảo</a>
+    <a href="bat-nat-mang.html">Bắt nạt mạng</a>
+    <a href="bao-mat.html">Bảo mật</a>
+    <a href="tu-bao-ve.html">Tự bảo vệ</a>
+    <a href="dien-dan.html">Diễn đàn</a>
+</nav>
 
 <main>
 
-    <!-- NỘI DUNG CHÍNH -->
     <div>
-
         <div class="box">
             <h2>Chủ đề thảo luận nổi bật</h2>
 
             <div class="forum-item">
                 <strong>🔍 Cách nhận biết website lừa đảo</strong>
-                <p>Dấu hiệu nhận biết trang web giả mạo, kém an toàn.</p>
+                <p>Dấu hiệu nhận biết trang web giả mạo.</p>
             </div>
 
             <div class="forum-item">
                 <strong>💸 Bị lừa tiền online phải làm gì?</strong>
-                <p>Các bước cần làm để hạn chế thiệt hại và báo cáo.</p>
+                <p>Các bước cần làm để hạn chế thiệt hại.</p>
             </div>
 
             <div class="forum-item">
-                <strong>🔐 Cách đặt mật khẩu an toàn</strong>
-                <p>Hướng dẫn tạo mật khẩu mạnh và bảo mật tài khoản.</p>
-            </div>
-
-            <div class="forum-item">
-                <strong>📱 Sử dụng mạng xã hội an toàn</strong>
-                <p>Chia sẻ kinh nghiệm tránh rủi ro trên Facebook, Zalo.</p>
+                <strong>🔐 Đặt mật khẩu an toàn</strong>
+                <p>Cách tạo mật khẩu mạnh.</p>
             </div>
         </div>
 
@@ -195,33 +267,26 @@ footer{
             <form action="mailto:nguyentructructv0901@gmail.com" method="post" enctype="text/plain">
                 <input type="text" name="Họ tên" placeholder="Họ và tên" required>
                 <input type="email" name="Email" placeholder="Email liên hệ" required>
-                <textarea name="Nội dung" placeholder="Nhập nội dung câu hỏi hoặc chia sẻ..." required></textarea>
+                <textarea name="Nội dung" placeholder="Nhập nội dung câu hỏi..." required></textarea>
                 <button type="submit">📩 Gửi thông tin</button>
             </form>
         </div>
-
     </div>
 
-    <!-- SIDEBAR -->
     <aside class="sidebar">
-
         <div class="box">
             <h3>Lưu ý</h3>
-            <p>
-                Thông tin gửi về diễn đàn chỉ phục vụ học tập.
-                Không chia sẻ dữ liệu cá nhân nhạy cảm.
-            </p>
+            <p>Không chia sẻ thông tin cá nhân nhạy cảm.</p>
         </div>
 
         <div class="box">
             <h3>Liên kết nhanh</h3>
             <p>
-                • <a href="lua-dao.html">Lừa đảo Internet</a><br>
-                • <a href="bao-mat.html">Bảo mật thông tin</a><br>
-                • <a href="tu-bao-ve.html">Kỹ năng tự bảo vệ</a>
+                • <a href="lua-dao.html">Lừa đảo</a><br>
+                • <a href="bao-mat.html">Bảo mật</a><br>
+                • <a href="tu-bao-ve.html">Tự bảo vệ</a>
             </p>
         </div>
-
     </aside>
 
 </main>
