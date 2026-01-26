@@ -79,7 +79,6 @@ header{
     background:#fff;
     z-index:1;
 }
-
 @keyframes spin{to{transform:rotate(360deg);}}
 
 /* HEADER TEXT */
@@ -134,14 +133,12 @@ main{
     margin-bottom:30px;
     animation:fadeUp .8s ease;
 }
-
 .box h2{
     border-left:4px solid var(--second);
     padding-left:12px;
     margin-bottom:18px;
     color:#7dd3fc;
 }
-
 .box p{
     line-height:1.8;
     color:#c7d2fe;
@@ -205,7 +202,7 @@ footer{
 
 <header>
     <div class="logo-wrap">
-        <img src="logo.png" class="logo">
+        <img src="logo.png" class="logo" onerror="this.style.display='none'">
     </div>
     <div class="header-text">
         <h1>LỪA ĐẢO TRÊN INTERNET</h1>
@@ -224,64 +221,98 @@ footer{
 
 <main>
 
-    <div>
-        <div class="box">
-            <h2>Thực trạng lừa đảo trực tuyến</h2>
+<div>
+    <div class="box">
+        <h2>Thực trạng lừa đảo trên Internet</h2>
+        <p>
+            Trong thời đại công nghệ số, các hình thức lừa đảo trực tuyến
+            đang phát triển nhanh chóng và ngày càng tinh vi.
+            Kẻ gian lợi dụng sự nhẹ dạ, thiếu kiến thức an toàn mạng
+            của người dùng để chiếm đoạt tài sản và thông tin cá nhân.
+        </p>
+        <p>
+            Học sinh, sinh viên và người cao tuổi
+            là những đối tượng dễ bị nhắm tới nhất,
+            đặc biệt qua mạng xã hội, tin nhắn và email.
+        </p>
+    </div>
+
+    <div class="box">
+        <h2>Các hình thức lừa đảo phổ biến</h2>
+
+        <div class="card">
+            <h3>Giả danh ngân hàng – tổ chức</h3>
             <p>
-                Lừa đảo trên Internet ngày càng gia tăng với nhiều hình thức tinh vi,
-                lợi dụng sự thiếu hiểu biết và tâm lý chủ quan của người dùng.
-                Học sinh và người cao tuổi là những đối tượng dễ bị nhắm tới.
+                Gửi tin nhắn hoặc gọi điện thông báo tài khoản gặp sự cố,
+                yêu cầu cung cấp OTP, mật khẩu hoặc truy cập link giả mạo.
             </p>
         </div>
 
-        <div class="box">
-            <h2>Các hình thức lừa đảo phổ biến</h2>
-
-            <div class="card">
-                <h3>Giả danh ngân hàng</h3>
-                <p>Kẻ gian yêu cầu cung cấp OTP, mật khẩu hoặc link giả mạo.</p>
-            </div>
-
-            <div class="card">
-                <h3>Trúng thưởng ảo</h3>
-                <p>Thông báo trúng thưởng nhưng yêu cầu chuyển tiền trước.</p>
-            </div>
-
-            <div class="card">
-                <h3>Website giả mạo</h3>
-                <p>Sao chép giao diện Facebook, Zalo, ngân hàng.</p>
-            </div>
+        <div class="card">
+            <h3>Lừa đảo trúng thưởng</h3>
+            <p>
+                Thông báo trúng thưởng lớn nhưng yêu cầu đóng phí,
+                nạp thẻ hoặc chuyển tiền trước khi nhận quà.
+            </p>
         </div>
 
-        <div class="box">
-            <h2>Cách phòng tránh</h2>
+        <div class="card">
+            <h3>Website & fanpage giả mạo</h3>
             <p>
-                • Không cung cấp OTP, mật khẩu.<br>
-                • Kiểm tra kỹ link website.<br>
-                • Không chuyển tiền cho người lạ.<br>
-                • Báo ngay khi nghi ngờ bị lừa.
+                Sao chép giao diện Facebook, Zalo, Shopee, ngân hàng
+                nhằm đánh cắp tài khoản người dùng.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Lừa đảo tuyển dụng – việc làm</h3>
+            <p>
+                Đánh vào tâm lý muốn kiếm tiền nhanh,
+                yêu cầu đóng phí, cọc tiền hoặc mua khóa học.
             </p>
         </div>
     </div>
 
-    <aside class="sidebar">
-        <div class="box">
-            <h3>Khuyến cáo</h3>
-            <p>
-                Hãy thường xuyên cập nhật kiến thức an toàn Internet
-                để bảo vệ bản thân và gia đình.
-            </p>
-        </div>
+    <div class="box">
+        <h2>Cách phòng tránh hiệu quả</h2>
+        <p>
+            • Không cung cấp mật khẩu, mã OTP cho bất kỳ ai.<br>
+            • Không nhấp vào link lạ, kiểm tra kỹ địa chỉ website.<br>
+            • Không chuyển tiền cho người chưa xác minh danh tính.<br>
+            • Cài đặt bảo mật 2 lớp cho tài khoản cá nhân.<br>
+            • Báo cáo ngay cho người thân hoặc cơ quan chức năng khi nghi ngờ bị lừa.
+        </p>
+    </div>
 
-        <div class="box">
-            <h3>Chuyên mục liên quan</h3>
-            <p>
-                • <a href="bat-nat-mang.html">Bắt nạt mạng</a><br>
-                • <a href="bao-mat.html">Bảo mật</a><br>
-                • <a href="tu-bao-ve.html">Tự bảo vệ</a>
-            </p>
-        </div>
-    </aside>
+    <div class="box">
+        <h2>Phải làm gì khi bị lừa đảo?</h2>
+        <p>
+            Khi phát hiện bị lừa đảo, cần giữ bình tĩnh,
+            nhanh chóng liên hệ ngân hàng để khóa tài khoản,
+            đổi mật khẩu các dịch vụ liên quan
+            và trình báo với cơ quan chức năng để được hỗ trợ.
+        </p>
+    </div>
+</div>
+
+<aside class="sidebar">
+    <div class="box">
+        <h3>Khuyến cáo</h3>
+        <p>
+            Luôn nâng cao cảnh giác khi sử dụng Internet.
+            Không tin vào các thông báo bất ngờ liên quan đến tiền bạc.
+        </p>
+    </div>
+
+    <div class="box">
+        <h3>Chuyên mục liên quan</h3>
+        <p>
+            • <a href="bat-nat-mang.html">Bắt nạt mạng</a><br>
+            • <a href="bao-mat.html">Bảo mật</a><br>
+            • <a href="tu-bao-ve.html">Tự bảo vệ</a>
+        </p>
+    </div>
+</aside>
 
 </main>
 
