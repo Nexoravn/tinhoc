@@ -6,14 +6,10 @@
 <title>Diễn đàn – Internet An Toàn</title>
 
 <style>
-/* ===== BIẾN MÀU GIỐNG INDEX ===== */
 :root{
-    --main:#7c7cff;
     --second:#00e5ff;
     --accent:#ff4fd8;
-    --dark:#050816;
     --text:#e5e7eb;
-    --muted:#a5b4fc;
     --glass:rgba(255,255,255,.08);
 }
 
@@ -23,138 +19,36 @@ body{
     font-family:"Segoe UI",Arial,sans-serif;
     background:radial-gradient(circle at top, #1b1f4a, #050816 70%);
     color:var(--text);
-    overflow-x:hidden;
+    padding-bottom:50px;
 }
 
-/* SAO BAY */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:
-        radial-gradient(1px 1px at 20% 30%, #fff, transparent),
-        radial-gradient(1px 1px at 70% 40%, #fff, transparent),
-        radial-gradient(2px 2px at 50% 80%, #fff, transparent),
-        radial-gradient(1px 1px at 90% 20%, #fff, transparent);
-    animation:stars 70s linear infinite;
-    opacity:.5;
-    z-index:-1;
-}
-@keyframes stars{
-    from{transform:translateY(0);}
-    to{transform:translateY(-2000px);}
-}
-
-/* ===== HEADER ===== */
+/* HEADER */
 header{
-    background:rgba(10,15,40,.75);
-    backdrop-filter:blur(14px);
-    border-bottom:1px solid rgba(255,255,255,.15);
-    padding:22px 6%;
-    display:flex;
-    align-items:center;
-    gap:20px;
-    box-shadow:0 0 30px rgba(124,124,255,.4);
+    background:rgba(10,15,40,.8);
+    padding:24px;
+    text-align:center;
+    box-shadow:0 0 25px rgba(0,229,255,.3);
 }
-
-.logo-wrap{
-    position:relative;
-    width:70px;
-    height:70px;
-}
-.logo-wrap::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    border-radius:50%;
-    background:conic-gradient(#00e5ff,#7c7cff,#ff4fd8,#00e5ff);
-    filter:blur(6px);
-    animation:spin 6s linear infinite;
-}
-.logo{
-    position:relative;
-    width:56px;
-    height:56px;
-    margin:7px;
-    border-radius:50%;
-    background:#fff;
-    z-index:1;
-}
-
-@keyframes spin{to{transform:rotate(360deg);}}
-
-.header-text h1{
-    font-size:26px;
+header h1{
     background:linear-gradient(90deg,#fff,var(--second),var(--accent));
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
-.header-text p{
-    color:var(--muted);
-    margin-top:6px;
-}
 
-/* ===== NAV ===== */
-nav{
-    background:rgba(5,8,30,.9);
-    backdrop-filter:blur(12px);
-    padding:14px 6%;
-}
-nav a{
-    color:#dbeafe;
-    text-decoration:none;
-    margin-right:28px;
-    font-weight:600;
-    position:relative;
-}
-nav a::after{
-    content:"";
-    position:absolute;
-    left:0;bottom:-4px;
-    width:0;height:2px;
-    background:linear-gradient(90deg,var(--second),var(--accent));
-    transition:.4s;
-}
-nav a:hover::after{width:100%;}
-
-/* ===== MAIN ===== */
+/* MAIN */
 main{
-    padding:45px 6%;
-    display:grid;
-    grid-template-columns:2fr 1fr;
-    gap:40px;
+    padding:40px 6%;
+    max-width:1100px;
+    margin:auto;
 }
 
-/* ===== BOX GLASS ===== */
+/* BOX */
 .box{
     background:var(--glass);
     backdrop-filter:blur(14px);
-    padding:28px;
+    padding:26px;
     border-radius:14px;
     margin-bottom:30px;
-    animation:fadeUp .8s ease;
-}
-
-.box h2, .box h3{
-    border-left:4px solid var(--second);
-    padding-left:12px;
-    margin-bottom:18px;
-    color:#7dd3fc;
-}
-
-/* FORUM ITEM */
-.forum-item{
-    padding:14px 0;
-    border-bottom:1px solid rgba(255,255,255,.12);
-}
-.forum-item:last-child{border-bottom:none;}
-.forum-item strong{
-    color:#e0e7ff;
-}
-.forum-item p{
-    font-size:14px;
-    color:#c7d2fe;
-    margin-top:6px;
 }
 
 /* FORM */
@@ -166,134 +60,149 @@ input, textarea{
     background:rgba(255,255,255,.12);
     border:1px solid rgba(255,255,255,.25);
     color:#fff;
-    padding:12px 14px;
+    padding:12px;
     border-radius:6px;
-    font-size:15px;
 }
 textarea{height:120px;resize:none;}
 
 button{
     background:linear-gradient(90deg,var(--second),var(--accent));
     border:none;
-    color:#000;
     padding:12px;
     border-radius:6px;
     font-weight:700;
     cursor:pointer;
 }
-button:hover{
-    box-shadow:0 0 20px rgba(0,229,255,.6);
-}
 
-/* SIDEBAR */
-.sidebar p{
+/* POST */
+.forum-item{
+    padding:18px 0;
+    border-bottom:1px solid rgba(255,255,255,.15);
+}
+.forum-item:last-child{border-bottom:none;}
+
+.post-title{
+    font-size:17px;
+    font-weight:700;
+}
+.post-meta{
+    font-size:13px;
+    color:#c7d2fe;
+    margin:6px 0 10px;
+}
+.post-actions{
+    margin-top:10px;
+    display:flex;
+    gap:16px;
     font-size:14px;
-    color:#c7d2fe;
-    line-height:1.6;
 }
-.sidebar a{
-    color:var(--second);
-    text-decoration:none;
+.action{
+    cursor:pointer;
+    user-select:none;
 }
-
-/* FOOTER */
-footer{
-    background:#050816;
-    color:#c7d2fe;
-    text-align:center;
-    padding:28px;
-    margin-top:50px;
-}
-
-/* ANIM */
-@keyframes fadeUp{
-    from{opacity:0;transform:translateY(25px);}
-    to{opacity:1;transform:translateY(0);}
-}
-
-@media(max-width:900px){
-    header{flex-direction:column;text-align:center;}
-    main{grid-template-columns:1fr;}
-}
+.like{color:#ff8bdc;}
+.delete{color:#f87171;}
 </style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo-wrap">
-        <img src="logo.png" class="logo">
-    </div>
-    <div class="header-text">
-        <h1>DIỄN ĐÀN INTERNET AN TOÀN</h1>
-        <p>Chia sẻ – Hỏi đáp – Kinh nghiệm sử dụng Internet an toàn</p>
-    </div>
+    <h1>DIỄN ĐÀN INTERNET AN TOÀN</h1>
+    <p>Chia sẻ – Hỏi đáp – Kinh nghiệm sử dụng Internet an toàn</p>
 </header>
-
-<nav>
-    <a href="index.html">Trang chủ</a>
-    <a href="lua-dao.html">Lừa đảo</a>
-    <a href="bat-nat-mang.html">Bắt nạt mạng</a>
-    <a href="bao-mat.html">Bảo mật</a>
-    <a href="tu-bao-ve.html">Tự bảo vệ</a>
-    <a href="dien-dan.html">Diễn đàn</a>
-</nav>
 
 <main>
 
-    <div>
-        <div class="box">
-            <h2>Chủ đề thảo luận nổi bật</h2>
+<!-- FORM -->
+<div class="box">
+    <h2>📝 Đăng bài mới</h2>
+    <form id="postForm">
+        <input type="text" id="name" placeholder="Tên của bạn" required>
+        <input type="text" id="title" placeholder="Tiêu đề bài viết" required>
+        <textarea id="content" placeholder="Nội dung bài viết..." required></textarea>
+        <button type="submit">Đăng bài</button>
+    </form>
+</div>
 
-            <div class="forum-item">
-                <strong>🔍 Cách nhận biết website lừa đảo</strong>
-                <p>Dấu hiệu nhận biết trang web giả mạo.</p>
-            </div>
-
-            <div class="forum-item">
-                <strong>💸 Bị lừa tiền online phải làm gì?</strong>
-                <p>Các bước cần làm để hạn chế thiệt hại.</p>
-            </div>
-
-            <div class="forum-item">
-                <strong>🔐 Đặt mật khẩu an toàn</strong>
-                <p>Cách tạo mật khẩu mạnh.</p>
-            </div>
-        </div>
-
-        <div class="box">
-            <h2>Gửi câu hỏi / chia sẻ</h2>
-
-            <form action="mailto:nguyentructructv0901@gmail.com" method="post" enctype="text/plain">
-                <input type="text" name="Họ tên" placeholder="Họ và tên" required>
-                <input type="email" name="Email" placeholder="Email liên hệ" required>
-                <textarea name="Nội dung" placeholder="Nhập nội dung câu hỏi..." required></textarea>
-                <button type="submit">📩 Gửi thông tin</button>
-            </form>
-        </div>
-    </div>
-
-    <aside class="sidebar">
-        <div class="box">
-            <h3>Lưu ý</h3>
-            <p>Không chia sẻ thông tin cá nhân nhạy cảm.</p>
-        </div>
-
-        <div class="box">
-            <h3>Liên kết nhanh</h3>
-            <p>
-                • <a href="lua-dao.html">Lừa đảo</a><br>
-                • <a href="bao-mat.html">Bảo mật</a><br>
-                • <a href="tu-bao-ve.html">Tự bảo vệ</a>
-            </p>
-        </div>
-    </aside>
+<!-- POSTS -->
+<div class="box">
+    <h2>💬 Bài viết mới nhất</h2>
+    <div id="forumList"></div>
+</div>
 
 </main>
 
-<footer>
-    © 2026 – Cổng thông tin Internet An Toàn | Dự án học tập
-</footer>
+<script>
+const form = document.getElementById("postForm");
+const forumList = document.getElementById("forumList");
+
+let posts = JSON.parse(localStorage.getItem("posts")) || [];
+renderPosts();
+
+form.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const title = document.getElementById("title").value.trim();
+    const content = document.getElementById("content").value.trim();
+
+    if(name && title && content){
+        posts.unshift({
+            name,
+            title,
+            content,
+            time: new Date().toLocaleString("vi-VN"),
+            likes: 0
+        });
+        save();
+        renderPosts();
+        form.reset();
+    }
+});
+
+function renderPosts(){
+    forumList.innerHTML = "";
+    posts.forEach((post, index) => {
+        const div = document.createElement("div");
+        div.className = "forum-item";
+        div.innerHTML = `
+            <div class="post-title">🗨 ${post.title}</div>
+            <div class="post-meta">
+                👤 ${post.name} • ⏰ ${post.time}
+            </div>
+            <p>${post.content}</p>
+            <div class="post-actions">
+                <span class="action like" onclick="likePost(${index})">
+                    ❤️ ${post.likes}
+                </span>
+                <span class="action delete" onclick="deletePost(${index})">
+                    🗑️ Xóa
+                </span>
+            </div>
+        `;
+        forumList.appendChild(div);
+    });
+}
+
+function likePost(index){
+    posts[index].likes++;
+    save();
+    renderPosts();
+}
+
+function deletePost(index){
+    if(confirm("Bạn có chắc muốn xóa bài viết này?")){
+        posts.splice(index,1);
+        save();
+        renderPosts();
+    }
+}
+
+function save(){
+    localStorage.setItem("posts", JSON.stringify(posts));
+}
+</script>
 
 </body>
 </html>
