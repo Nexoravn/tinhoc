@@ -1,19 +1,10 @@
-// ===== IMPORT FIREBASE SDK =====
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import {
-  getFirestore,
-  collection,
-  addDoc,
-  onSnapshot,
-  deleteDoc,
-  doc,
-  updateDoc,
-  serverTimestamp,
-  query,
-  orderBy
-} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+  getFirestore, collection, addDoc,
+  onSnapshot, deleteDoc, doc,
+  updateDoc, serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// ===== FIREBASE CONFIG =====
 const firebaseConfig = {
   apiKey: "AIzaSyC140KZpGPog1eu1sli-ZBsGnM22qtjg9c",
   authDomain: "diendan-tinhoc.firebaseapp.com",
@@ -23,64 +14,41 @@ const firebaseConfig = {
   appId: "1:569311383784:web:e4a39bff08ea498191395d"
 };
 
-// ===== INIT =====
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const postsRef = collection(db, "posts");
 
-// ===== DOM =====
-const form = document.getElementById("postForm");
-const forumList = document.getElementById("forumList");
-
-// ===== ĐĂNG BÀI =====
-form.addEventListener("submit", async (e) => {
+/* ĐĂNG BÀI */
+postForm.onsubmit = async (e) => {
   e.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const title = document.getElementById("title").value.trim();
-  const content = document.getElementById("content").value.trim();
-
-  if (!name || !title || !content) {
-    alert("Vui lòng nhập đầy đủ thông tin");
-    return;
-  }
-
-  await addDoc(collection(db, "posts"), {
-    name,
-    title,
-    content,
+  await addDoc(postsRef, {
+    name: name.value,
+    title: title.value,
+    content: content.value,
     likes: 0,
     createdAt: serverTimestamp()
   });
+  postForm.reset();
+};
 
-  form.reset();
-});
-
-// ===== HIỂN THỊ REALTIME =====
-const q = query(collection(db, "posts"), orderBy("createdAt", "desc"));
-
-onSnapshot(q, (snapshot) => {
+/* HIỂN THỊ */
+onSnapshot(postsRef, (snap) => {
   forumList.innerHTML = "";
-
-  snapshot.forEach((docSnap) => {
-    const post = docSnap.data();
-    const time = post.createdAt
-      ? post.createdAt.toDate().toLocaleString("vi-VN")
-      : "Đang cập nhật...";
-
+  snap.forEach(docSnap => {
+    const p = docSnap.data();
     forumList.innerHTML += `
       <div class="forum-item">
-        <div class="post-title">🗨 ${post.title}</div>
+        <div class="post-title">${p.title}</div>
         <div class="post-meta">
-          👤 ${post.name} • ⏰ ${time}
+          👤 ${p.name} · ⏰ ${p.createdAt?.toDate().toLocaleString() || ""}
         </div>
-        <p>${post.content}</p>
-
+        <div>${p.content}</div>
         <div class="post-actions">
-          <span class="action like" onclick="likePost('${docSnap.id}', ${post.likes})">
-            ❤️ ${post.likes}
+          <span class="like" onclick="likePost('${docSnap.id}', ${p.likes})">
+            ❤️ ${p.likes}
           </span>
-          <span class="action delete" onclick="deletePost('${docSnap.id}')">
-            🗑️ Xóa
+          <span class="delete" onclick="deletePost('${docSnap.id}')">
+            🗑 Xóa
           </span>
         </div>
       </div>
@@ -88,16 +56,14 @@ onSnapshot(q, (snapshot) => {
   });
 });
 
-// ===== LIKE =====
+/* LIKE */
 window.likePost = async (id, likes) => {
-  await updateDoc(doc(db, "posts", id), {
-    likes: likes + 1
-  });
+  await updateDoc(doc(db, "posts", id), { likes: likes + 1 });
 };
 
-// ===== XÓA =====
+/* XÓA */
 window.deletePost = async (id) => {
-  if (confirm("Bạn có chắc muốn xóa bài viết này?")) {
+  if(confirm("Xóa bài viết này?")){
     await deleteDoc(doc(db, "posts", id));
   }
 };
