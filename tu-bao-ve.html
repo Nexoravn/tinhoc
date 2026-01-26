@@ -133,14 +133,12 @@ main{
     margin-bottom:30px;
     animation:fadeUp .8s ease;
 }
-
 .box h2{
     border-left:4px solid var(--second);
     padding-left:12px;
     margin-bottom:18px;
     color:#7dd3fc;
 }
-
 .box p{
     line-height:1.8;
     color:#c7d2fe;
@@ -148,7 +146,7 @@ main{
 
 /* CARD */
 .card{
-    border-left:4px solid var(--accent);
+    border-left:4px solid #22c55e;
     padding-left:15px;
     margin-bottom:18px;
 }
@@ -204,11 +202,11 @@ footer{
 
 <header>
     <div class="logo-wrap">
-        <img src="logo.png" class="logo">
+        <img src="logo.png" class="logo" onerror="this.style.display='none'">
     </div>
     <div class="header-text">
         <h1>KỸ NĂNG TỰ BẢO VỆ TRÊN INTERNET</h1>
-        <p>Chủ động phòng ngừa – An toàn khi tham gia không gian mạng</p>
+        <p>Chủ động phòng ngừa – An toàn trong không gian mạng</p>
     </div>
 </header>
 
@@ -223,68 +221,109 @@ footer{
 
 <main>
 
-    <div>
-        <div class="box">
-            <h2>Vì sao cần kỹ năng tự bảo vệ?</h2>
+<div>
+    <div class="box">
+        <h2>Tại sao cần kỹ năng tự bảo vệ?</h2>
+        <p>
+            Internet là môi trường mở, nơi mọi người có thể giao tiếp,
+            học tập và giải trí. Tuy nhiên, đây cũng là nơi tồn tại nhiều
+            rủi ro như lừa đảo, đánh cắp thông tin, xâm hại quyền riêng tư
+            và bắt nạt trên mạng.
+        </p>
+        <p>
+            Việc trang bị kỹ năng tự bảo vệ giúp người dùng,
+            đặc biệt là học sinh, sử dụng Internet một cách an toàn,
+            chủ động và có trách nhiệm hơn.
+        </p>
+    </div>
+
+    <div class="box">
+        <h2>Các kỹ năng tự bảo vệ quan trọng</h2>
+
+        <div class="card">
+            <h3>Nhận diện nguy cơ</h3>
             <p>
-                Internet mang lại nhiều lợi ích cho học tập và giải trí,
-                nhưng cũng tiềm ẩn nhiều nguy cơ như lừa đảo, xâm phạm
-                quyền riêng tư và bắt nạt mạng.
+                Biết phân biệt tin giả, link độc hại,
+                yêu cầu cung cấp thông tin bất thường
+                hoặc các dấu hiệu lừa đảo trực tuyến.
             </p>
         </div>
 
-        <div class="box">
-            <h2>Các kỹ năng cần thiết</h2>
-
-            <div class="card">
-                <h3>Nhận diện nguy cơ</h3>
-                <p>Nhận biết link lạ, yêu cầu thông tin bất thường.</p>
-            </div>
-
-            <div class="card">
-                <h3>Bảo vệ tài khoản</h3>
-                <p>Mật khẩu mạnh, bật xác thực hai lớp.</p>
-            </div>
-
-            <div class="card">
-                <h3>Ứng xử văn minh</h3>
-                <p>Tôn trọng người khác, tránh tranh cãi tiêu cực.</p>
-            </div>
-
-            <div class="card">
-                <h3>Tìm sự hỗ trợ</h3>
-                <p>Trao đổi với người thân, thầy cô khi gặp sự cố.</p>
-            </div>
+        <div class="card">
+            <h3>Bảo vệ thông tin cá nhân</h3>
+            <p>
+                Không chia sẻ số điện thoại, địa chỉ,
+                mật khẩu, mã OTP lên mạng xã hội hoặc cho người lạ.
+            </p>
         </div>
 
-        <div class="box">
-            <h2>Khuyến nghị</h2>
+        <div class="card">
+            <h3>Bảo mật tài khoản</h3>
             <p>
-                • Không kết bạn với người lạ.<br>
-                • Không chia sẻ thông tin nhạy cảm.<br>
-                • Sử dụng Internet hợp lý.<br>
-                • Luôn cập nhật kiến thức an toàn mạng.
+                Sử dụng mật khẩu mạnh,
+                bật xác thực hai bước (2FA)
+                và thường xuyên đổi mật khẩu.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Ứng xử văn minh trên mạng</h3>
+            <p>
+                Tôn trọng người khác,
+                không tham gia tranh cãi tiêu cực,
+                không lan truyền thông tin sai sự thật.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Tìm kiếm sự hỗ trợ</h3>
+            <p>
+                Khi gặp sự cố, cần chia sẻ với
+                người thân, thầy cô hoặc cơ quan chức năng
+                để được hỗ trợ kịp thời.
             </p>
         </div>
     </div>
 
-    <aside class="sidebar">
-        <div class="box">
-            <h3>Thông điệp</h3>
-            <p>
-                An toàn Internet là trách nhiệm của mỗi người dùng.
-            </p>
-        </div>
+    <div class="box">
+        <h2>Những điều nên và không nên làm</h2>
+        <p>
+            ✔ Kiểm tra kỹ thông tin trước khi chia sẻ.<br>
+            ✔ Sử dụng Internet đúng mục đích học tập, giải trí lành mạnh.<br>
+            ✖ Không kết bạn với người lạ không rõ danh tính.<br>
+            ✖ Không tin vào lời hứa kiếm tiền nhanh trên mạng.
+        </p>
+    </div>
 
-        <div class="box">
-            <h3>Chuyên mục liên quan</h3>
-            <p>
-                • <a href="lua-dao.html">Lừa đảo</a><br>
-                • <a href="bat-nat-mang.html">Bắt nạt mạng</a><br>
-                • <a href="bao-mat.html">Bảo mật</a>
-            </p>
-        </div>
-    </aside>
+    <div class="box">
+        <h2>Thông điệp dành cho học sinh</h2>
+        <p>
+            Hãy là người dùng Internet thông minh,
+            chủ động bảo vệ bản thân
+            và góp phần xây dựng môi trường mạng
+            an toàn, lành mạnh cho tất cả mọi người.
+        </p>
+    </div>
+</div>
+
+<aside class="sidebar">
+    <div class="box">
+        <h3>Ghi nhớ</h3>
+        <p>
+            An toàn trên Internet không phải là may mắn,
+            mà là kết quả của kiến thức và ý thức.
+        </p>
+    </div>
+
+    <div class="box">
+        <h3>Chuyên mục liên quan</h3>
+        <p>
+            • <a href="lua-dao.html">Lừa đảo trực tuyến</a><br>
+            • <a href="bat-nat-mang.html">Bắt nạt mạng</a><br>
+            • <a href="bao-mat.html">Bảo mật thông tin</a>
+        </p>
+    </div>
+</aside>
 
 </main>
 
