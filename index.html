@@ -2,14 +2,19 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cổng thông tin Internet An Toàn</title>
 
 <style>
+/* ===== BIẾN MÀU ===== */
 :root{
+    --main:#7c7cff;
     --second:#00e5ff;
     --accent:#ff4fd8;
+    --dark:#050816;
     --text:#e5e7eb;
+    --muted:#a5b4fc;
     --glass:rgba(255,255,255,.08);
 }
 
@@ -19,44 +24,166 @@ body{
     font-family:"Segoe UI",Arial,sans-serif;
     background:radial-gradient(circle at top, #1b1f4a, #050816 70%);
     color:var(--text);
+    overflow-x:hidden;
 }
 
-/* HEADER */
-header{
-    background:rgba(10,15,40,.8);
-    padding:28px;
-    text-align:center;
-    box-shadow:0 0 25px rgba(0,229,255,.3);
+/* ===== SAO BAY ===== */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(1px 1px at 20% 30%, #fff, transparent),
+        radial-gradient(1px 1px at 70% 40%, #fff, transparent),
+        radial-gradient(2px 2px at 50% 80%, #fff, transparent),
+        radial-gradient(1px 1px at 90% 20%, #fff, transparent);
+    animation:stars 70s linear infinite;
+    opacity:.5;
+    z-index:-1;
 }
-header h1{
+@keyframes stars{
+    from{transform:translateY(0);}
+    to{transform:translateY(-2000px);}
+}
+
+/* ===== HEADER ===== */
+header{
+    background:rgba(10,15,40,.75);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,.15);
+    padding:22px 6%;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    box-shadow:0 0 30px rgba(124,124,255,.4);
+}
+
+/* LOGO */
+.logo-wrap{
+    position:relative;
+    width:80px;
+    height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.logo-wrap::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    background:conic-gradient(#00e5ff,#7c7cff,#ff4fd8,#00e5ff);
+    filter:blur(6px);
+    animation:spin 6s linear infinite;
+}
+.logo-wrap::after{
+    content:"";
+    position:absolute;
+    inset:-12px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(124,124,255,.6), transparent 70%);
+    animation:pulse 3s ease-in-out infinite;
+}
+.logo{
+    width:68px;
+    height:68px;
+    border-radius:50%;
+    background:#fff;
+    z-index:1;
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes spin{to{transform:rotate(360deg);}}
+@keyframes pulse{
+    0%,100%{opacity:.4;transform:scale(1);}
+    50%{opacity:.8;transform:scale(1.15);}
+}
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-6px);}
+}
+
+/* TITLE */
+.header-text h1{
+    font-size:28px;
     background:linear-gradient(90deg,#fff,var(--second),var(--accent));
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
+.header-text p{
+    color:var(--muted);
+    margin-top:6px;
+}
 
-/* NAV */
+/* ===== NAV ===== */
 nav{
     background:rgba(5,8,30,.9);
+    backdrop-filter:blur(12px);
     padding:14px 6%;
 }
 nav a{
     color:#dbeafe;
     text-decoration:none;
-    margin-right:26px;
+    margin-right:28px;
     font-weight:600;
+    position:relative;
+}
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;bottom:-4px;
+    width:0;height:2px;
+    background:linear-gradient(90deg,var(--second),var(--accent));
+    transition:.4s;
+}
+nav a:hover::after{width:100%;}
+
+/* ===== MAIN ===== */
+.container{
+    padding:45px 6%;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:40px;
 }
 
-/* MAIN */
-main{
-    padding:50px 6%;
-    max-width:1000px;
-    margin:auto;
-}
-.box{
+.main-article{
     background:var(--glass);
     backdrop-filter:blur(14px);
-    padding:30px;
+    padding:32px;
     border-radius:14px;
+}
+.main-article img{
+    width:100%;
+    border-radius:10px;
+    margin:20px 0;
+}
+
+.sidebar{
+    background:var(--glass);
+    backdrop-filter:blur(14px);
+    padding:26px;
+    border-radius:14px;
+}
+.sidebar h3{
+    border-left:4px solid var(--second);
+    padding-left:12px;
+    margin-bottom:20px;
+    color:#7dd3fc;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:#050816;
+    color:#c7d2fe;
+    text-align:center;
+    padding:28px;
+    margin-top:50px;
+}
+
+@media(max-width:900px){
+    header{flex-direction:column;text-align:center;}
+    .container{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -64,29 +191,41 @@ main{
 <body>
 
 <header>
-    <h1>CỔNG THÔNG TIN INTERNET AN TOÀN</h1>
-    <p>Phổ biến kiến thức an toàn không gian mạng</p>
+    <div class="logo-wrap">
+        <!-- nếu chưa có logo.png thì vẫn không lỗi -->
+        <img src="logo.png" class="logo" onerror="this.style.display='none'">
+    </div>
+    <div class="header-text">
+        <h1>CỔNG THÔNG TIN INTERNET AN TOÀN</h1>
+        <p>Phổ biến kiến thức an toàn không gian mạng</p>
+    </div>
 </header>
 
 <nav>
     <a href="index.html">Trang chủ</a>
-    <a href="dien-dan.html">Diễn đàn</a>
     <a href="lua-dao.html">Lừa đảo</a>
+    <a href="bat-nat-mang.html">Bắt nạt mạng</a>
     <a href="bao-mat.html">Bảo mật</a>
+    <a href="tu-bao-ve.html">Tự bảo vệ</a>
+    <a href="dien-dan.html">Diễn đàn</a>
 </nav>
 
-<main>
-    <div class="box">
-        <h2>Giới thiệu</h2>
-        <p>
-            Website cung cấp kiến thức và diễn đàn trao đổi
-            về an toàn Internet dành cho học sinh.
-        </p>
+<div class="container">
+    <div class="main-article">
+        <h2>Nâng cao nhận thức về an toàn Internet</h2>
+        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200">
+        <p>Internet mang lại nhiều lợi ích nhưng cũng tiềm ẩn nhiều rủi ro cho học sinh.</p>
     </div>
-</main>
 
-<footer style="text-align:center;padding:30px;color:#c7d2fe;">
-    © 2026 – Dự án học tập
+    <aside class="sidebar">
+        <h3>Tin nổi bật</h3>
+        <p>Cảnh báo lừa đảo online giả danh ngân hàng.</p>
+        <p>Bắt nạt mạng ảnh hưởng nghiêm trọng đến tâm lý.</p>
+    </aside>
+</div>
+
+<footer>
+    © 2026 – Cổng thông tin Internet An Toàn | Dự án học tập
 </footer>
 
 </body>
