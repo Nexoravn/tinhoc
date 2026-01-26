@@ -96,10 +96,7 @@ button{
     gap:16px;
     font-size:14px;
 }
-.action{
-    cursor:pointer;
-    user-select:none;
-}
+.action{cursor:pointer;}
 .like{color:#ff8bdc;}
 .delete{color:#f87171;}
 </style>
@@ -114,7 +111,6 @@ button{
 
 <main>
 
-<!-- FORM -->
 <div class="box">
     <h2>📝 Đăng bài mới</h2>
     <form id="postForm">
@@ -125,7 +121,6 @@ button{
     </form>
 </div>
 
-<!-- POSTS -->
 <div class="box">
     <h2>💬 Bài viết mới nhất</h2>
     <div id="forumList"></div>
@@ -133,76 +128,7 @@ button{
 
 </main>
 
-<script>
-const form = document.getElementById("postForm");
-const forumList = document.getElementById("forumList");
-
-let posts = JSON.parse(localStorage.getItem("posts")) || [];
-renderPosts();
-
-form.addEventListener("submit", e => {
-    e.preventDefault();
-
-    const name = document.getElementById("name").value.trim();
-    const title = document.getElementById("title").value.trim();
-    const content = document.getElementById("content").value.trim();
-
-    if(name && title && content){
-        posts.unshift({
-            name,
-            title,
-            content,
-            time: new Date().toLocaleString("vi-VN"),
-            likes: 0
-        });
-        save();
-        renderPosts();
-        form.reset();
-    }
-});
-
-function renderPosts(){
-    forumList.innerHTML = "";
-    posts.forEach((post, index) => {
-        const div = document.createElement("div");
-        div.className = "forum-item";
-        div.innerHTML = `
-            <div class="post-title">🗨 ${post.title}</div>
-            <div class="post-meta">
-                👤 ${post.name} • ⏰ ${post.time}
-            </div>
-            <p>${post.content}</p>
-            <div class="post-actions">
-                <span class="action like" onclick="likePost(${index})">
-                    ❤️ ${post.likes}
-                </span>
-                <span class="action delete" onclick="deletePost(${index})">
-                    🗑️ Xóa
-                </span>
-            </div>
-        `;
-        forumList.appendChild(div);
-    });
-}
-
-function likePost(index){
-    posts[index].likes++;
-    save();
-    renderPosts();
-}
-
-function deletePost(index){
-    if(confirm("Bạn có chắc muốn xóa bài viết này?")){
-        posts.splice(index,1);
-        save();
-        renderPosts();
-    }
-}
-
-function save(){
-    localStorage.setItem("posts", JSON.stringify(posts));
-}
-</script>
-
+<!-- FIREBASE -->
+<script type="module" src="firebase.js"></script>
 </body>
 </html>
