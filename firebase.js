@@ -13,7 +13,7 @@ import {
   orderBy
 } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
 
-// ===== FIREBASE CONFIG (CỦA BẠN) =====
+// ===== FIREBASE CONFIG =====
 const firebaseConfig = {
   apiKey: "AIzaSyC140KZpGPog1eu1sli-ZBsGnM22qtjg9c",
   authDomain: "diendan-tinhoc.firebaseapp.com",
@@ -28,63 +28,76 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // ===== DOM =====
-const postsDiv = document.getElementById("posts");
+const form = document.getElementById("postForm");
+const forumList = document.getElementById("forumList");
 
 // ===== ĐĂNG BÀI =====
-window.addPost = async function () {
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
   const name = document.getElementById("name").value.trim();
+  const title = document.getElementById("title").value.trim();
   const content = document.getElementById("content").value.trim();
 
-  if (!name || !content) {
-    alert("Nhập đầy đủ thông tin!");
+  if (!name || !title || !content) {
+    alert("Vui lòng nhập đầy đủ thông tin");
     return;
   }
 
   await addDoc(collection(db, "posts"), {
-    name: name,
-    content: content,
+    name,
+    title,
+    content,
     likes: 0,
     createdAt: serverTimestamp()
   });
 
-  document.getElementById("content").value = "";
-};
+  form.reset();
+});
 
-// ===== HIỂN THỊ BÀI (REALTIME – AI CŨNG THẤY) =====
+// ===== HIỂN THỊ REALTIME =====
 const q = query(collection(db, "posts"), orderBy("createdAt", "desc"));
 
 onSnapshot(q, (snapshot) => {
-  postsDiv.innerHTML = "";
+  forumList.innerHTML = "";
+
   snapshot.forEach((docSnap) => {
     const post = docSnap.data();
     const time = post.createdAt
       ? post.createdAt.toDate().toLocaleString("vi-VN")
       : "Đang cập nhật...";
 
-    postsDiv.innerHTML += `
+    forumList.innerHTML += `
       <div class="forum-item">
-        <strong>👤 ${post.name}</strong>
-        <p>⏰ ${time}</p>
+        <div class="post-title">🗨 ${post.title}</div>
+        <div class="post-meta">
+          👤 ${post.name} • ⏰ ${time}
+        </div>
         <p>${post.content}</p>
 
-        ❤️ ${post.likes}
-        <button onclick="likePost('${docSnap.id}', ${post.likes})">Like</button>
-        <button onclick="deletePost('${docSnap.id}')">Xóa</button>
+        <div class="post-actions">
+          <span class="action like" onclick="likePost('${docSnap.id}', ${post.likes})">
+            ❤️ ${post.likes}
+          </span>
+          <span class="action delete" onclick="deletePost('${docSnap.id}')">
+            🗑️ Xóa
+          </span>
+        </div>
       </div>
     `;
   });
 });
 
 // ===== LIKE =====
-window.likePost = async function (id, likes) {
+window.likePost = async (id, likes) => {
   await updateDoc(doc(db, "posts", id), {
     likes: likes + 1
   });
 };
 
 // ===== XÓA =====
-window.deletePost = async function (id) {
-  if (confirm("Bạn chắc chắn muốn xóa bài này?")) {
+window.deletePost = async (id) => {
+  if (confirm("Bạn có chắc muốn xóa bài viết này?")) {
     await deleteDoc(doc(db, "posts", id));
   }
 };
