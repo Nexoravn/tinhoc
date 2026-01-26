@@ -35,6 +35,29 @@ header h1{
     -webkit-text-fill-color:transparent;
 }
 
+/* NAV */
+nav{
+    background:rgba(5,8,30,.9);
+    backdrop-filter:blur(12px);
+    padding:14px 6%;
+}
+nav a{
+    color:#dbeafe;
+    text-decoration:none;
+    margin-right:28px;
+    font-weight:600;
+    position:relative;
+}
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;bottom:-4px;
+    width:0;height:2px;
+    background:linear-gradient(90deg,var(--second),var(--accent));
+    transition:.4s;
+}
+nav a:hover::after{width:100%;}
+
 /* MAIN */
 main{
     padding:40px 6%;
@@ -52,10 +75,7 @@ main{
 }
 
 /* FORM */
-form{
-    display:grid;
-    gap:14px;
-}
+form{display:grid;gap:14px;}
 input, textarea{
     background:rgba(255,255,255,.12);
     border:1px solid rgba(255,255,255,.25);
@@ -64,7 +84,6 @@ input, textarea{
     border-radius:6px;
 }
 textarea{height:120px;resize:none;}
-
 button{
     background:linear-gradient(90deg,var(--second),var(--accent));
     border:none;
@@ -79,45 +98,39 @@ button{
     padding:18px 0;
     border-bottom:1px solid rgba(255,255,255,.15);
 }
-.forum-item:last-child{border-bottom:none;}
-
-.post-title{
-    font-size:17px;
-    font-weight:700;
-}
-.post-meta{
-    font-size:13px;
-    color:#c7d2fe;
-    margin:6px 0 10px;
-}
-.post-actions{
-    margin-top:10px;
-    display:flex;
-    gap:16px;
-    font-size:14px;
-}
-.action{cursor:pointer;}
-.like{color:#ff8bdc;}
-.delete{color:#f87171;}
+.post-title{font-size:17px;font-weight:700;}
+.post-meta{font-size:13px;color:#c7d2fe;margin:6px 0 10px;}
+.post-actions{display:flex;gap:16px;font-size:14px;}
+.like{color:#ff8bdc;cursor:pointer;}
+.delete{color:#f87171;cursor:pointer;}
 </style>
 </head>
 
 <body>
 
 <header>
-    <h1>DIỄN ĐÀN INTERNET AN TOÀN</h1>
-    <p>Chia sẻ – Hỏi đáp – Kinh nghiệm sử dụng Internet an toàn</p>
+    <h1>BẢO MẬT THÔNG TIN CÁ NHÂN</h1>
+    <p>Giữ an toàn dữ liệu – Bảo vệ quyền riêng tư</p>
 </header>
+
+<nav>
+    <a href="index.html">Trang chủ</a>
+    <a href="#">Lừa đảo</a>
+    <a href="#">Bắt nạt mạng</a>
+    <a href="#">Bảo mật</a>
+    <a href="#">Tự bảo vệ</a>
+    <a href="dien-dan.html">Diễn đàn</a>
+</nav>
 
 <main>
 
 <div class="box">
     <h2>📝 Đăng bài mới</h2>
     <form id="postForm">
-        <input type="text" id="name" placeholder="Tên của bạn" required>
-        <input type="text" id="title" placeholder="Tiêu đề bài viết" required>
-        <textarea id="content" placeholder="Nội dung bài viết..." required></textarea>
-        <button type="submit">Đăng bài</button>
+        <input id="name" placeholder="Tên của bạn" required>
+        <input id="title" placeholder="Tiêu đề bài viết" required>
+        <textarea id="content" placeholder="Nội dung..." required></textarea>
+        <button>Đăng bài</button>
     </form>
 </div>
 
@@ -128,7 +141,6 @@ button{
 
 </main>
 
-<!-- FIREBASE -->
 <script type="module" src="firebase.js"></script>
 </body>
 </html>
