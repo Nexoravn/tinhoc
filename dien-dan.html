@@ -19,49 +19,42 @@ body{
     font-family:"Segoe UI",Arial,sans-serif;
     background:radial-gradient(circle at top, #1b1f4a, #050816 70%);
     color:var(--text);
-    padding-bottom:50px;
+    padding-bottom:80px;
 }
 
 /* HEADER */
 header{
-    background:rgba(10,15,40,.8);
-    padding:24px;
+    background:rgba(10,15,40,.85);
+    padding:32px;
     text-align:center;
-    box-shadow:0 0 25px rgba(0,229,255,.3);
 }
 header h1{
+    font-size:32px;
     background:linear-gradient(90deg,#fff,var(--second),var(--accent));
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
+}
+header p{
+    color:#c7d2fe;
+    margin-top:10px;
 }
 
 /* NAV */
 nav{
     background:rgba(5,8,30,.9);
-    backdrop-filter:blur(12px);
     padding:14px 6%;
 }
 nav a{
     color:#dbeafe;
     text-decoration:none;
-    margin-right:28px;
+    margin-right:26px;
     font-weight:600;
-    position:relative;
 }
-nav a::after{
-    content:"";
-    position:absolute;
-    left:0;bottom:-4px;
-    width:0;height:2px;
-    background:linear-gradient(90deg,var(--second),var(--accent));
-    transition:.4s;
-}
-nav a:hover::after{width:100%;}
 
 /* MAIN */
 main{
     padding:40px 6%;
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
 }
 
@@ -69,9 +62,31 @@ main{
 .box{
     background:var(--glass);
     backdrop-filter:blur(14px);
-    padding:26px;
-    border-radius:14px;
-    margin-bottom:30px;
+    padding:28px;
+    border-radius:16px;
+    margin-bottom:32px;
+}
+.box h2{
+    border-left:4px solid var(--second);
+    padding-left:12px;
+    margin-bottom:16px;
+    color:#7dd3fc;
+}
+.box p, .box li{
+    color:#c7d2fe;
+    line-height:1.7;
+}
+
+/* CATEGORY */
+.category{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+.category div{
+    background:rgba(255,255,255,.08);
+    padding:18px;
+    border-radius:12px;
 }
 
 /* FORM */
@@ -81,65 +96,155 @@ input, textarea{
     border:1px solid rgba(255,255,255,.25);
     color:#fff;
     padding:12px;
-    border-radius:6px;
+    border-radius:8px;
 }
-textarea{height:120px;resize:none;}
+textarea{height:130px;resize:none;}
 button{
     background:linear-gradient(90deg,var(--second),var(--accent));
     border:none;
     padding:12px;
-    border-radius:6px;
+    border-radius:8px;
     font-weight:700;
     cursor:pointer;
 }
 
 /* POST */
 .forum-item{
-    padding:18px 0;
+    padding:20px 0;
     border-bottom:1px solid rgba(255,255,255,.15);
 }
-.post-title{font-size:17px;font-weight:700;}
+.post-title{font-size:18px;font-weight:700;}
 .post-meta{font-size:13px;color:#c7d2fe;margin:6px 0 10px;}
-.post-actions{display:flex;gap:16px;font-size:14px;}
-.like{color:#ff8bdc;cursor:pointer;}
-.delete{color:#f87171;cursor:pointer;}
+.post-content{line-height:1.6;}
+
+/* PAGINATION */
+.pagination{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    margin-top:20px;
+}
+.page-btn{
+    padding:8px 16px;
+    border-radius:8px;
+    border:none;
+    cursor:pointer;
+    background:rgba(255,255,255,.15);
+    color:#fff;
+}
+
+/* CONTACT */
+.contact{
+    text-align:center;
+}
+.contact a{
+    color:var(--second);
+    font-weight:600;
+    text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+    background:#050816;
+    color:#c7d2fe;
+    text-align:center;
+    padding:28px;
+    margin-top:60px;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-    <h1>BẢO MẬT THÔNG TIN CÁ NHÂN</h1>
-    <p>Giữ an toàn dữ liệu – Bảo vệ quyền riêng tư</p>
+    <h1>DIỄN ĐÀN INTERNET AN TOÀN</h1>
+    <p>Nơi chia sẻ kiến thức – Kinh nghiệm – Giải pháp bảo vệ bản thân trên không gian mạng</p>
 </header>
 
 <nav>
     <a href="index.html">Trang chủ</a>
-    <a href="#">Lừa đảo</a>
-    <a href="#">Bắt nạt mạng</a>
-    <a href="#">Bảo mật</a>
-    <a href="#">Tự bảo vệ</a>
+    <a href="lua-dao.html">Lừa đảo</a>
+    <a href="bat-nat-mang.html">Bắt nạt mạng</a>
+    <a href="bao-mat.html">Bảo mật</a>
+    <a href="tu-bao-ve.html">Tự bảo vệ</a>
     <a href="dien-dan.html">Diễn đàn</a>
 </nav>
 
 <main>
 
+<!-- GIỚI THIỆU -->
+<div class="box">
+    <h2>📢 Giới thiệu diễn đàn</h2>
+    <p>
+        Diễn đàn Internet An Toàn là không gian mở dành cho học sinh, giáo viên và
+        cộng đồng cùng trao đổi kiến thức, chia sẻ kinh nghiệm và thảo luận các vấn đề
+        liên quan đến an toàn thông tin, bảo mật dữ liệu và ứng xử văn minh trên mạng.
+    </p>
+</div>
+
+<!-- CHỦ ĐỀ -->
+<div class="box">
+    <h2>📂 Các chủ đề thảo luận</h2>
+    <div class="category">
+        <div>🛑 Lừa đảo trực tuyến</div>
+        <div>💬 Bắt nạt trên mạng</div>
+        <div>🔐 Bảo mật tài khoản</div>
+        <div>👨‍👩‍👧 Kỹ năng tự bảo vệ</div>
+        <div>📱 Mạng xã hội an toàn</div>
+        <div>⚖️ Pháp luật & Internet</div>
+    </div>
+</div>
+
+<!-- NỘI QUY -->
+<div class="box">
+    <h2>📜 Nội quy diễn đàn</h2>
+    <ul>
+        <li>Không đăng nội dung phản cảm, sai sự thật.</li>
+        <li>Tôn trọng người khác, không công kích cá nhân.</li>
+        <li>Không chia sẻ thông tin cá nhân của người khác.</li>
+        <li>Khuyến khích chia sẻ kiến thức mang tính giáo dục.</li>
+    </ul>
+</div>
+
+<!-- ĐĂNG BÀI -->
 <div class="box">
     <h2>📝 Đăng bài mới</h2>
     <form id="postForm">
         <input id="name" placeholder="Tên của bạn" required>
         <input id="title" placeholder="Tiêu đề bài viết" required>
-        <textarea id="content" placeholder="Nội dung..." required></textarea>
+        <textarea id="content" placeholder="Nội dung bài viết..." required></textarea>
         <button>Đăng bài</button>
     </form>
 </div>
 
+<!-- BÀI VIẾT -->
 <div class="box">
     <h2>💬 Bài viết mới nhất</h2>
     <div id="forumList"></div>
+
+    <div class="pagination">
+        <button id="prevBtn" class="page-btn">⬅ Trang trước</button>
+        <button id="nextBtn" class="page-btn">Trang sau ➡</button>
+    </div>
+</div>
+
+<!-- LIÊN HỆ -->
+<div class="box contact">
+    <h2>📧 Liên hệ quản trị viên</h2>
+    <p>
+        Nếu bạn cần hỗ trợ hoặc báo cáo nội dung vi phạm, vui lòng liên hệ:
+    </p>
+    <p>
+        👉 <a href="mailto:admin.internetantoan@gmail.com">
+        admin.internetantoan@gmail.com</a>
+    </p>
 </div>
 
 </main>
+
+<footer>
+    © 2026 – Cổng thông tin Internet An Toàn | Dự án học tập
+</footer>
 
 <script type="module" src="firebase.js"></script>
 </body>
