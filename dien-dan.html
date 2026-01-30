@@ -10,6 +10,7 @@
     --second:#00e5ff;
     --accent:#ff4fd8;
     --text:#e5e7eb;
+    --muted:#c7d2fe;
     --glass:rgba(255,255,255,.08);
 }
 
@@ -25,18 +26,56 @@ body{
 /* HEADER */
 header{
     background:rgba(10,15,40,.85);
-    padding:32px;
-    text-align:center;
+    backdrop-filter:blur(14px);
+    padding:22px 6%;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    box-shadow:0 0 30px rgba(124,124,255,.4);
 }
-header h1{
-    font-size:32px;
+
+/* LOGO */
+.logo-wrap{
+    position:relative;
+    width:80px;
+    height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.logo-wrap::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    background:conic-gradient(#00e5ff,#7c7cff,#ff4fd8,#00e5ff);
+    filter:blur(6px);
+    animation:spin 6s linear infinite;
+}
+.logo{
+    position:relative;
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    background:#fff;
+    z-index:1;
+    object-fit:contain;
+
+    /* FIX LOGO XOAY */
+    transform: rotate(-90deg);
+}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* HEADER TEXT */
+.header-text h1{
+    font-size:28px;
     background:linear-gradient(90deg,#fff,var(--second),var(--accent));
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
-header p{
-    color:#c7d2fe;
-    margin-top:10px;
+.header-text p{
+    color:var(--muted);
+    margin-top:6px;
 }
 
 /* NAV */
@@ -151,14 +190,23 @@ footer{
     padding:28px;
     margin-top:60px;
 }
+
+@media(max-width:900px){
+    header{flex-direction:column;text-align:center;}
+}
 </style>
 </head>
 
 <body>
 
 <header>
-    <h1>DIỄN ĐÀN INTERNET AN TOÀN</h1>
-    <p>Nơi chia sẻ kiến thức – Kinh nghiệm – Giải pháp bảo vệ bản thân trên không gian mạng</p>
+    <div class="logo-wrap">
+        <img src="logo.png" class="logo" onerror="this.style.display='none'">
+    </div>
+    <div class="header-text">
+        <h1>DIỄN ĐÀN INTERNET AN TOÀN</h1>
+        <p>Nơi chia sẻ kiến thức – Kinh nghiệm – Giải pháp an toàn mạng</p>
+    </div>
 </header>
 
 <nav>
@@ -172,17 +220,16 @@ footer{
 
 <main>
 
-<!-- GIỚI THIỆU -->
 <div class="box">
     <h2>📢 Giới thiệu diễn đàn</h2>
     <p>
-        Diễn đàn Internet An Toàn là không gian mở dành cho học sinh, giáo viên và
-        cộng đồng cùng trao đổi kiến thức, chia sẻ kinh nghiệm và thảo luận các vấn đề
-        liên quan đến an toàn thông tin, bảo mật dữ liệu và ứng xử văn minh trên mạng.
+        Diễn đàn Internet An Toàn là không gian mở dành cho học sinh,
+        giáo viên và cộng đồng cùng trao đổi kiến thức,
+        chia sẻ kinh nghiệm và thảo luận các vấn đề
+        liên quan đến an toàn không gian mạng.
     </p>
 </div>
 
-<!-- CHỦ ĐỀ -->
 <div class="box">
     <h2>📂 Các chủ đề thảo luận</h2>
     <div class="category">
@@ -195,7 +242,6 @@ footer{
     </div>
 </div>
 
-<!-- NỘI QUY -->
 <div class="box">
     <h2>📜 Nội quy diễn đàn</h2>
     <ul>
@@ -206,7 +252,6 @@ footer{
     </ul>
 </div>
 
-<!-- ĐĂNG BÀI -->
 <div class="box">
     <h2>📝 Đăng bài mới</h2>
     <form id="postForm">
@@ -217,7 +262,6 @@ footer{
     </form>
 </div>
 
-<!-- BÀI VIẾT -->
 <div class="box">
     <h2>💬 Bài viết mới nhất</h2>
     <div id="forumList"></div>
@@ -228,14 +272,9 @@ footer{
     </div>
 </div>
 
-<!-- LIÊN HỆ -->
 <div class="box contact">
     <h2>📧 Liên hệ quản trị viên</h2>
-    <p>
-        Nếu bạn cần hỗ trợ hoặc báo cáo nội dung vi phạm, vui lòng liên hệ:
-    </p>
-    <p>
-        👉 <a href="mailto:admin.internetantoan@gmail.com">
+    <p>👉 <a href="mailto:admin.internetantoan@gmail.com">
         admin.internetantoan@gmail.com</a>
     </p>
 </div>
