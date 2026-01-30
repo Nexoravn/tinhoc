@@ -55,29 +55,39 @@ header{
     box-shadow:0 0 30px rgba(124,124,255,.4);
 }
 
+/* LOGO */
 .logo-wrap{
     position:relative;
     width:80px;
     height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
+
 .logo-wrap::before{
     content:"";
     position:absolute;
-    width:100%;
-    height:100%;
+    inset:0;
     border-radius:50%;
     background:conic-gradient(#00e5ff,#7c7cff,#ff4fd8,#00e5ff);
     filter:blur(6px);
     animation:spin 6s linear infinite;
+    z-index:0;
 }
+
 .logo{
     width:68px;
     height:68px;
     border-radius:50%;
-    background:#fff;
+    position:relative;
     z-index:1;
+    display:block;
 }
-@keyframes spin{to{transform:rotate(360deg);}}
+
+@keyframes spin{
+    to{transform:rotate(360deg);}
+}
 
 /* HEADER TEXT */
 .header-text h1{
@@ -165,8 +175,13 @@ footer{
 
 <header>
     <div class="logo-wrap">
+        <!-- TEST 100% HIỆN -->
+        <img src="https://via.placeholder.com/68" class="logo">
+        <!-- Khi có logo thật thì đổi lại:
         <img src="logo.png" class="logo">
+        -->
     </div>
+
     <div class="header-text">
         <h1>BẮT NẠT TRÊN INTERNET</h1>
         <p>Hiểm họa tinh thần và tác động lâu dài trong môi trường số</p>
@@ -184,128 +199,18 @@ footer{
 
 <div class="container">
 
-<!-- NỘI DUNG CHÍNH -->
 <div>
-
 <div class="box">
 <h2>1. Bắt nạt trên Internet là gì?</h2>
-<p>
-Bắt nạt trên Internet (Cyberbullying) là hành vi sử dụng mạng xã hội,
-tin nhắn, diễn đàn hoặc trò chơi trực tuyến để xúc phạm,
-đe dọa hoặc làm tổn thương tinh thần người khác.
-</p>
-<p>
-Khác với bắt nạt truyền thống, bắt nạt trên mạng có thể diễn ra 24/7,
-lan truyền rất nhanh và khó kiểm soát.
-</p>
+<p>Bắt nạt trên Internet (Cyberbullying) là hành vi xúc phạm, đe dọa hoặc làm tổn thương tinh thần người khác qua môi trường số.</p>
+</div>
 </div>
 
-<div class="box">
-<h2>2. Thực trạng hiện nay</h2>
-<p>
-Nhiều học sinh, thanh thiếu niên trở thành nạn nhân
-do sử dụng mạng xã hội từ sớm nhưng chưa có đủ kỹ năng tự bảo vệ.
-</p>
-<p>
-Các hành vi bắt nạt thường diễn ra âm thầm,
-khiến nạn nhân cảm thấy cô lập, sợ hãi và mất tự tin.
-</p>
-</div>
-
-<div class="box">
-<h2>3. Các hình thức bắt nạt phổ biến</h2>
-
-<div class="card">
-<h3>Chửi bới, xúc phạm</h3>
-<p>
-Sử dụng lời lẽ thô tục, miệt thị ngoại hình,
-giới tính, học lực hoặc hoàn cảnh gia đình.
-</p>
-</div>
-
-<div class="card">
-<h3>Lan truyền tin giả</h3>
-<p>
-Bịa đặt câu chuyện, cắt ghép hình ảnh
-để bôi nhọ danh dự người khác.
-</p>
-</div>
-
-<div class="card">
-<h3>Đe dọa tinh thần</h3>
-<p>
-Gửi tin nhắn đe dọa,
-khiến nạn nhân hoang mang, lo sợ và stress.
-</p>
-</div>
-
-<div class="card">
-<h3>Cô lập trên mạng</h3>
-<p>
-Cố tình loại trừ, tẩy chay hoặc kêu gọi người khác
-không giao tiếp với nạn nhân.
-</p>
-</div>
-
-</div>
-
-<div class="box">
-<h2>4. Hậu quả của bắt nạt trên mạng</h2>
-<p>
-• Gây tổn thương tâm lý kéo dài.<br>
-• Ảnh hưởng đến học tập và các mối quan hệ.<br>
-• Dẫn đến lo âu, trầm cảm, mất niềm tin vào bản thân.<br>
-• Trong trường hợp nghiêm trọng, có thể gây hậu quả rất đáng tiếc.
-</p>
-</div>
-
-<div class="box">
-<h2>5. Cách phòng tránh và xử lý</h2>
-<p>
-• Không đáp trả hoặc tranh cãi với kẻ bắt nạt.<br>
-• Lưu lại bằng chứng như tin nhắn, hình ảnh.<br>
-• Chặn và báo cáo tài khoản vi phạm.<br>
-• Chia sẻ với người thân, thầy cô hoặc bạn bè đáng tin cậy.<br>
-• Hạn chế chia sẻ thông tin cá nhân công khai.
-</p>
-</div>
-
-<div class="box">
-<h2>6. Thông điệp</h2>
-<p>
-Mỗi người dùng Internet cần có trách nhiệm
-trong lời nói và hành vi của mình.
-</p>
-<p>
-Hãy sử dụng mạng xã hội một cách văn minh,
-tôn trọng người khác và sẵn sàng lên tiếng
-khi thấy hành vi bắt nạt trên mạng.
-</p>
-</div>
-
-</div>
-
-<!-- SIDEBAR -->
 <aside class="sidebar">
-
 <div class="box">
 <h3>Lưu ý</h3>
-<p>
-Nếu bạn hoặc người xung quanh
-đang là nạn nhân của bắt nạt trên mạng,
-đừng im lặng – hãy tìm sự giúp đỡ.
-</p>
+<p>Đừng im lặng – hãy tìm sự giúp đỡ khi gặp bắt nạt.</p>
 </div>
-
-<div class="box">
-<h3>Xem thêm</h3>
-<p>
-• <a href="lua-dao.html">Nhận diện lừa đảo</a><br>
-• <a href="bao-mat.html">Bảo mật thông tin</a><br>
-• <a href="tu-bao-ve.html">Kỹ năng tự bảo vệ</a>
-</p>
-</div>
-
 </aside>
 
 </div>
