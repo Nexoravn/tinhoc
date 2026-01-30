@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lừa đảo trên Internet</title>
+<title>Bắt nạt trên Internet</title>
 
 <style>
 :root{
@@ -56,11 +56,13 @@ header{
     box-shadow:0 0 30px rgba(124,124,255,.4);
 }
 
+/* LOGO – ĐỒNG BỘ */
 .logo-wrap{
     position:relative;
     width:70px;
     height:70px;
 }
+
 .logo-wrap::before{
     content:"";
     position:absolute;
@@ -70,16 +72,20 @@ header{
     filter:blur(6px);
     animation:spin 6s linear infinite;
 }
+
 .logo{
     position:relative;
     width:56px;
     height:56px;
     margin:7px;
     border-radius:50%;
-    background:#fff;
     z-index:1;
+    display:block;
 }
-@keyframes spin{to{transform:rotate(360deg);}}
+
+@keyframes spin{
+    to{transform:rotate(360deg);}
+}
 
 /* HEADER TEXT */
 .header-text h1{
@@ -104,79 +110,52 @@ nav a{
     text-decoration:none;
     margin-right:28px;
     font-weight:600;
-    position:relative;
 }
-nav a::after{
-    content:"";
-    position:absolute;
-    left:0;bottom:-4px;
-    width:0;height:2px;
-    background:linear-gradient(90deg,var(--second),var(--accent));
-    transition:.4s;
-}
-nav a:hover::after{width:100%;}
 
 /* MAIN */
-main{
+.container{
     padding:45px 6%;
     display:grid;
     grid-template-columns:2fr 1fr;
     gap:40px;
 }
 
-/* BOX */
 .box{
     background:var(--glass);
     backdrop-filter:blur(14px);
     padding:30px;
     border-radius:14px;
     margin-bottom:30px;
-    animation:fadeUp .8s ease;
 }
 .box h2{
-    border-left:4px solid var(--second);
-    padding-left:12px;
-    margin-bottom:18px;
     color:#7dd3fc;
+    margin-bottom:15px;
 }
 .box p{
-    line-height:1.8;
-    color:#c7d2fe;
+    line-height:1.9;
+    color:#e0e7ff;
+    margin-bottom:10px;
 }
 
 /* CARD */
 .card{
     border-left:4px solid var(--accent);
     padding-left:15px;
-    margin-bottom:18px;
+    margin-bottom:20px;
 }
 .card h3{
-    color:#f9a8d4;
+    color:#fca5a5;
     margin-bottom:6px;
-}
-.card p{
-    font-size:15px;
-    color:#e0e7ff;
 }
 
 /* SIDEBAR */
 .sidebar h3{
     border-left:4px solid var(--second);
-    padding-left:12px;
-    margin-bottom:15px;
-    color:#7dd3fc;
-}
-.sidebar p{
-    font-size:14px;
-    color:#c7d2fe;
-    line-height:1.6;
-}
-.sidebar a{
-    color:var(--second);
-    text-decoration:none;
+    padding-left:10px;
+    color:#67e8f9;
+    margin-bottom:10px;
 }
 
-/* FOOTER */
 footer{
     background:#050816;
     color:#c7d2fe;
@@ -185,15 +164,9 @@ footer{
     margin-top:50px;
 }
 
-/* ANIM */
-@keyframes fadeUp{
-    from{opacity:0;transform:translateY(25px);}
-    to{opacity:1;transform:translateY(0);}
-}
-
 @media(max-width:900px){
     header{flex-direction:column;text-align:center;}
-    main{grid-template-columns:1fr;}
+    .container{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -202,11 +175,11 @@ footer{
 
 <header>
     <div class="logo-wrap">
-        <img src="logo.png" class="logo" onerror="this.style.display='none'">
+        <img src="logo.png" class="logo">
     </div>
     <div class="header-text">
-        <h1>LỪA ĐẢO TRÊN INTERNET</h1>
-        <p>Nhận diện – Phòng tránh – Xử lý các hành vi lừa đảo trực tuyến</p>
+        <h1>BẮT NẠT TRÊN INTERNET</h1>
+        <p>Hiểm họa tinh thần và tác động lâu dài trong môi trường số</p>
     </div>
 </header>
 
@@ -219,105 +192,62 @@ footer{
     <a href="dien-dan.html">Diễn đàn</a>
 </nav>
 
-<main>
+<div class="container">
 
 <div>
-    <div class="box">
-        <h2>Thực trạng lừa đảo trên Internet</h2>
-        <p>
-            Trong thời đại công nghệ số, các hình thức lừa đảo trực tuyến
-            đang phát triển nhanh chóng và ngày càng tinh vi.
-            Kẻ gian lợi dụng sự nhẹ dạ, thiếu kiến thức an toàn mạng
-            của người dùng để chiếm đoạt tài sản và thông tin cá nhân.
-        </p>
-        <p>
-            Học sinh, sinh viên và người cao tuổi
-            là những đối tượng dễ bị nhắm tới nhất,
-            đặc biệt qua mạng xã hội, tin nhắn và email.
-        </p>
-    </div>
+<div class="box">
+<h2>1. Bắt nạt trên Internet là gì?</h2>
+<p>
+Bắt nạt trên Internet (Cyberbullying) là hành vi sử dụng mạng xã hội,
+tin nhắn hoặc nền tảng trực tuyến để xúc phạm, đe dọa
+và làm tổn thương tinh thần người khác.
+</p>
+</div>
 
-    <div class="box">
-        <h2>Các hình thức lừa đảo phổ biến</h2>
+<div class="box">
+<h2>2. Các hình thức phổ biến</h2>
 
-        <div class="card">
-            <h3>Giả danh ngân hàng – tổ chức</h3>
-            <p>
-                Gửi tin nhắn hoặc gọi điện thông báo tài khoản gặp sự cố,
-                yêu cầu cung cấp OTP, mật khẩu hoặc truy cập link giả mạo.
-            </p>
-        </div>
+<div class="card">
+<h3>Xúc phạm – miệt thị</h3>
+<p>Sử dụng lời lẽ thô tục, công kích ngoại hình hoặc danh dự.</p>
+</div>
 
-        <div class="card">
-            <h3>Lừa đảo trúng thưởng</h3>
-            <p>
-                Thông báo trúng thưởng lớn nhưng yêu cầu đóng phí,
-                nạp thẻ hoặc chuyển tiền trước khi nhận quà.
-            </p>
-        </div>
+<div class="card">
+<h3>Lan truyền tin giả</h3>
+<p>Bịa đặt, cắt ghép hình ảnh để bôi nhọ người khác.</p>
+</div>
 
-        <div class="card">
-            <h3>Website & fanpage giả mạo</h3>
-            <p>
-                Sao chép giao diện Facebook, Zalo, Shopee, ngân hàng
-                nhằm đánh cắp tài khoản người dùng.
-            </p>
-        </div>
+<div class="card">
+<h3>Cô lập trên mạng</h3>
+<p>Tẩy chay, loại trừ hoặc kêu gọi người khác tránh xa nạn nhân.</p>
+</div>
+</div>
 
-        <div class="card">
-            <h3>Lừa đảo tuyển dụng – việc làm</h3>
-            <p>
-                Đánh vào tâm lý muốn kiếm tiền nhanh,
-                yêu cầu đóng phí, cọc tiền hoặc mua khóa học.
-            </p>
-        </div>
-    </div>
-
-    <div class="box">
-        <h2>Cách phòng tránh hiệu quả</h2>
-        <p>
-            • Không cung cấp mật khẩu, mã OTP cho bất kỳ ai.<br>
-            • Không nhấp vào link lạ, kiểm tra kỹ địa chỉ website.<br>
-            • Không chuyển tiền cho người chưa xác minh danh tính.<br>
-            • Cài đặt bảo mật 2 lớp cho tài khoản cá nhân.<br>
-            • Báo cáo ngay cho người thân hoặc cơ quan chức năng khi nghi ngờ bị lừa.
-        </p>
-    </div>
-
-    <div class="box">
-        <h2>Phải làm gì khi bị lừa đảo?</h2>
-        <p>
-            Khi phát hiện bị lừa đảo, cần giữ bình tĩnh,
-            nhanh chóng liên hệ ngân hàng để khóa tài khoản,
-            đổi mật khẩu các dịch vụ liên quan
-            và trình báo với cơ quan chức năng để được hỗ trợ.
-        </p>
-    </div>
+<div class="box">
+<h2>3. Cách phòng tránh</h2>
+<p>
+• Không đáp trả kẻ bắt nạt.<br>
+• Lưu lại bằng chứng.<br>
+• Chặn và báo cáo tài khoản vi phạm.<br>
+• Chia sẻ với người lớn đáng tin cậy.
+</p>
+</div>
 </div>
 
 <aside class="sidebar">
-    <div class="box">
-        <h3>Khuyến cáo</h3>
-        <p>
-            Luôn nâng cao cảnh giác khi sử dụng Internet.
-            Không tin vào các thông báo bất ngờ liên quan đến tiền bạc.
-        </p>
-    </div>
-
-    <div class="box">
-        <h3>Chuyên mục liên quan</h3>
-        <p>
-            • <a href="bat-nat-mang.html">Bắt nạt mạng</a><br>
-            • <a href="bao-mat.html">Bảo mật</a><br>
-            • <a href="tu-bao-ve.html">Tự bảo vệ</a>
-        </p>
-    </div>
+<div class="box">
+<h3>Lưu ý</h3>
+<p>
+Nếu bạn đang là nạn nhân của bắt nạt mạng,
+đừng im lặng – hãy tìm sự giúp đỡ.
+</p>
+</div>
 </aside>
 
-</main>
+</div>
 
 <footer>
-    © 2026 – Cổng thông tin Internet An Toàn | Dự án học tập
+© 2026 – Cổng thông tin Internet An Toàn | Dự án học tập
 </footer>
 
 </body>
