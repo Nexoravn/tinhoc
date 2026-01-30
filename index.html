@@ -2,7 +2,6 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cổng thông tin Internet An Toàn</title>
 
@@ -26,6 +25,7 @@ body{
     overflow-x:hidden;
 }
 
+/* SAO BAY */
 body::before{
     content:"";
     position:fixed;
@@ -44,6 +44,7 @@ body::before{
     to{transform:translateY(-2000px);}
 }
 
+/* HEADER */
 header{
     background:rgba(10,15,40,.75);
     backdrop-filter:blur(14px);
@@ -55,6 +56,7 @@ header{
     box-shadow:0 0 30px rgba(124,124,255,.4);
 }
 
+/* LOGO */
 .logo-wrap{
     position:relative;
     width:80px;
@@ -66,8 +68,7 @@ header{
 .logo-wrap::before{
     content:"";
     position:absolute;
-    width:100%;
-    height:100%;
+    inset:0;
     border-radius:50%;
     background:conic-gradient(#00e5ff,#7c7cff,#ff4fd8,#00e5ff);
     filter:blur(6px);
@@ -77,29 +78,17 @@ header{
     position:relative;
     width:56px;
     height:56px;
-    margin:7px;
     border-radius:50%;
     background:#fff;
     z-index:1;
+    object-fit:contain;
 
-    /* FIX LOGO BỊ XOAY */
-    transform: rotate(90deg);
-}
-
+    /* FIX LOGO XOAY */
+    transform: rotate(-90deg);
 }
 @keyframes spin{to{transform:rotate(360deg);}}
-@keyframes float{
-    0%,100%{
-        transform: translateY(0) rotate(0deg);
-    }
-    50%{
-        transform: translateY(-6px) rotate(0deg);
-    }
-}
 
-
-
-
+/* HEADER TEXT */
 .header-text h1{
     font-size:28px;
     background:linear-gradient(90deg,#fff,var(--second),var(--accent));
@@ -111,6 +100,7 @@ header{
     margin-top:6px;
 }
 
+/* NAV */
 nav{
     background:rgba(5,8,30,.9);
     backdrop-filter:blur(12px);
@@ -126,13 +116,16 @@ nav a{
 nav a::after{
     content:"";
     position:absolute;
-    left:0;bottom:-4px;
-    width:0;height:2px;
+    left:0;
+    bottom:-4px;
+    width:0;
+    height:2px;
     background:linear-gradient(90deg,var(--second),var(--accent));
     transition:.4s;
 }
 nav a:hover::after{width:100%;}
 
+/* MAIN */
 .container{
     padding:45px 6%;
     display:grid;
@@ -140,18 +133,29 @@ nav a:hover::after{width:100%;}
     gap:40px;
 }
 
+/* MAIN ARTICLE */
 .main-article{
     background:var(--glass);
     backdrop-filter:blur(14px);
     padding:32px;
     border-radius:14px;
 }
+.main-article h2{
+    color:#7dd3fc;
+    margin-bottom:18px;
+}
 .main-article img{
     width:100%;
-    border-radius:10px;
+    border-radius:12px;
     margin:20px 0;
 }
+.main-article p{
+    line-height:1.8;
+    color:#c7d2fe;
+    margin-bottom:12px;
+}
 
+/* SIDEBAR */
 .sidebar{
     background:var(--glass);
     backdrop-filter:blur(14px);
@@ -161,10 +165,17 @@ nav a:hover::after{width:100%;}
 .sidebar h3{
     border-left:4px solid var(--second);
     padding-left:12px;
-    margin-bottom:20px;
+    margin-bottom:18px;
     color:#7dd3fc;
 }
+.sidebar p{
+    font-size:14px;
+    color:#c7d2fe;
+    line-height:1.6;
+    margin-bottom:14px;
+}
 
+/* FOOTER */
 footer{
     background:#050816;
     color:#c7d2fe;
@@ -203,66 +214,45 @@ footer{
 
 <div class="container">
 
-    <div class="main-article">
-        <h2>Nâng cao nhận thức về an toàn Internet</h2>
+<div class="main-article">
+    <h2>Nâng cao nhận thức về an toàn Internet</h2>
 
-        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200">
+    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200">
 
-        <p>
-            Internet mang lại nhiều lợi ích to lớn cho học sinh như học tập trực tuyến,
-            tìm kiếm thông tin và giao tiếp xã hội. Tuy nhiên, nếu thiếu kiến thức
-            và kỹ năng cần thiết, người dùng rất dễ gặp phải các rủi ro nghiêm trọng.
-        </p>
+    <p>
+        Internet mang lại nhiều lợi ích to lớn cho học sinh như học tập trực tuyến,
+        tìm kiếm thông tin và giao tiếp xã hội. Tuy nhiên, nếu thiếu kiến thức
+        và kỹ năng cần thiết, người dùng rất dễ gặp phải các rủi ro nghiêm trọng.
+    </p>
 
-        <p>
-            Trong những năm gần đây, tình trạng lừa đảo trực tuyến,
-            bắt nạt trên mạng và đánh cắp thông tin cá nhân
-            ngày càng gia tăng, đặc biệt trong giới trẻ.
-            Nhiều học sinh đã trở thành nạn nhân
-            do chủ quan hoặc thiếu hiểu biết.
-        </p>
+    <p>
+        Trong những năm gần đây, tình trạng lừa đảo trực tuyến,
+        bắt nạt trên mạng và đánh cắp thông tin cá nhân
+        ngày càng gia tăng, đặc biệt trong giới trẻ.
+    </p>
 
-        <p>
-            Cổng thông tin Internet An Toàn được xây dựng
-            nhằm cung cấp kiến thức cơ bản và nâng cao
-            giúp học sinh sử dụng Internet một cách an toàn,
-            lành mạnh và có trách nhiệm.
-        </p>
+    <p>
+        Cổng thông tin Internet An Toàn được xây dựng
+        nhằm cung cấp kiến thức cơ bản và nâng cao
+        giúp học sinh sử dụng Internet an toàn,
+        lành mạnh và có trách nhiệm.
+    </p>
 
-        <h3 style="margin-top:25px;color:#7dd3fc;">Mục tiêu của website</h3>
-        <p>
-            • Cảnh báo các nguy cơ tiềm ẩn trên Internet.<br>
-            • Hướng dẫn kỹ năng tự bảo vệ bản thân.<br>
-            • Nâng cao ý thức sử dụng mạng xã hội văn minh.<br>
-            • Góp phần xây dựng môi trường mạng an toàn.
-        </p>
+    <h3 style="margin-top:25px;color:#7dd3fc;">Mục tiêu của website</h3>
+    <p>
+        • Cảnh báo các nguy cơ tiềm ẩn trên Internet.<br>
+        • Hướng dẫn kỹ năng tự bảo vệ bản thân.<br>
+        • Nâng cao ý thức sử dụng mạng xã hội văn minh.<br>
+        • Góp phần xây dựng môi trường mạng an toàn.
+    </p>
+</div>
 
-        <h3 style="margin-top:25px;color:#7dd3fc;">Đối tượng hướng tới</h3>
-        <p>
-            Website hướng tới học sinh, phụ huynh và giáo viên –
-            những người mong muốn tìm hiểu kiến thức
-            về an toàn không gian mạng trong thời đại số.
-        </p>
-    </div>
-
-    <aside class="sidebar">
-        <h3>Tin nổi bật</h3>
-
-        <p>
-            🔔 <strong>Cảnh báo lừa đảo online</strong><br>
-            Giả danh ngân hàng, trúng thưởng, tuyển dụng việc làm.
-        </p>
-
-        <p>
-            ⚠️ <strong>Bắt nạt mạng</strong><br>
-            Bình luận xúc phạm gây tổn thương tâm lý lâu dài.
-        </p>
-
-        <p>
-            🔐 <strong>Bảo mật thông tin</strong><br>
-            Không chia sẻ mật khẩu, mã OTP, dữ liệu cá nhân.
-        </p>
-    </aside>
+<aside class="sidebar">
+    <h3>Tin nổi bật</h3>
+    <p>🔔 <strong>Cảnh báo lừa đảo online</strong><br>Giả danh ngân hàng, trúng thưởng.</p>
+    <p>⚠️ <strong>Bắt nạt mạng</strong><br>Bình luận xúc phạm gây tổn thương tâm lý.</p>
+    <p>🔐 <strong>Bảo mật thông tin</strong><br>Không chia sẻ mật khẩu, OTP.</p>
+</aside>
 
 </div>
 
@@ -272,8 +262,3 @@ footer{
 
 </body>
 </html>
-
-
-
-
-
